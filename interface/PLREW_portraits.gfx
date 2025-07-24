@@ -1,0 +1,145 @@
+spriteTypes = {
+	# LEADERS
+	spriteType = {
+		name = "GFX_portraits_andrzej_lepper"
+		texturefile = "gfx/leaders/POL/portrait_POL_andrzej_lepper.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_donald_tusk"
+		texturefile = "gfx/leaders/POL/portrait_POL_donald_tusk.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_janusz_korwin_mikke"
+		texturefile = "gfx/leaders/POL/portrait_POL_janusz_korwin-mikke.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_wojciech_olszanski"
+		texturefile = "gfx/leaders/POL/portrait_POL_wojciech_olszanski.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_zgromadzenie"
+		texturefile = "gfx/leaders/POL/portrait_POL_zgromadzenie_narodowe.dds"
+	}
+	# PIS
+	spriteType = {
+		name = "GFX_portraits_jaroslaw_kaczynski"
+		texturefile = "gfx/leaders/POL/portrait_POL_jaroslaw_kaczynski.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_janusz_kowalski"
+		textureFile = "gfx/leaders/POL/portrait_POL_janusz_kowalski.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_mateusz_morawiecki"
+		textureFile = "gfx/leaders/POL/portrait_POL_mateusz_morawiecki.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_zbigniew_ziobro_leader"
+		textureFile = "gfx/leaders/POL/portrait_POL_zbigniew_ziobro.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_rada_liderow_pis"
+		textureFile = "gfx/leaders/POL/portrait_POL_rada_liderow_pis.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Rajmund_Andrzejczak"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_rajmund_andrzejczak.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Sergiej_Szojgu"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_szojgu.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Yevgeny_Prigoshin"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_prigozyn.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Mariusz_Kaminski"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_mariusz_kaminski.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Maciej_Wasik"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_maciej_wasik.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Radoslaw_Fogiel"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_radoslaw_fogiel.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Ryszard_Terlecki"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_ryszard_terlecki.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Dariusz_Matecki"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_dariusz_matecki.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Lukasz_Schreiber"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_lukasz_schreiber.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Elzbieta_Witek"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_elzbieta_witek.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Michal_Rachon"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_michal_rachon.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Adrian_Klarenbach"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_adrian_klarenbach.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Jacek_Kurski"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_jacek_kurski.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Mariusz_Gosek"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_mariusz_gosek.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Tadeusz_Rydzyk"
+		textureFile = "gfx/interface/ideas/generals/portrait_POL_tadeusz_rydzyk.dds"
+	}
+
+#samoobrona
+	spriteType = {
+		name = "GFX_portraits_Jerzy_Andrzejewski"
+		texturefile = "gfx/interface/ideas/generals/portrait_POL_jerzy_andrzejewski.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_Zbigniew_Stonoga"
+		texturefile = "gfx/interface/ideas/generals/portrait_POL_zbigniew_stonoga.dds"
+	}
+
+	# ADVISORS
+
+	spriteType = {
+		name = "GFX_portraits_andrzej_duda"
+		texturefile = "gfx/advisors/andrzejduda.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_bartlomiej_misiewicz"
+		texturefile = "gfx/advisors/bartlomiejmisiewicz.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_bronislaw_geremek"
+		texturefile = "gfx/advisors/bronislawgeremek.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_daniel_obajtek"
+		texturefile = "gfx/advisors/danielobajtek.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_karol_nawrocki"
+		texturefile = "gfx/advisors/karolnawrocki.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_przemyslaw_czarnek"
+		texturefile = "gfx/advisors/przemyslawczarnek.dds"
+	}
+	spriteType = {
+		name = "GFX_portraits_tadeusz_mazowiecki"
+		texturefile = "gfx/advisors/tadeuszmazowiecki.dds"
+	}
+}

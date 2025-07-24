@@ -1,0 +1,5 @@
+sound = 
+{
+	name = "polske_trzeba_zlepperowac"
+	file = "pol_speech/plzlep.wav"
+}

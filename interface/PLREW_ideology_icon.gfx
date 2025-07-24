@@ -1,0 +1,12 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_ideology_lepperism"
+		texturefile = "gfx/interface/ideologies/chlopski_konserwatyzm.dds"
+	}	
+	spriteType = {
+		name = "GFX_ideology_kaczism"
+		texturefile = "gfx/interface/ideologies/kaczyzm.dds"
+	}	
+	
+}

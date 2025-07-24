@@ -1,0 +1,352 @@
+spriteTypes = {
+#	SpriteType = {
+#		name = "GFX_focus_POL_"
+#		texturefile = "gfx/interface/goals/focus_POL_.dds"
+#	}
+
+	# Przed buntem
+	SpriteType = {
+		name = "GFX_focus_POL_bydgoskie_zamieszki"
+		texturefile = "gfx/interface/goals/focus_POL_bydgoskie_zamieszki.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_krakow_bojowki"
+		texturefile = "gfx/interface/goals/focus_POL_krakow_bojowki.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_nawiedzenie_wadowickie"
+		texturefile = "gfx/interface/goals/focus_POL_nawiedzenie_wadowickie.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_pozar_we_lwowie"
+		texturefile = "gfx/interface/goals/focus_POL_pozar_we_lwowie.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_gdanski_ruch_proniemiecki"
+		texturefile = "gfx/interface/goals/focus_POL_gdanski_ruch_proniemiecki.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_poznan_niemieccy_szpiedzy"
+		texturefile = "gfx/interface/goals/focus_POL_poznan_niemieccy_szpiedzy.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_jaszczur_krzykacz"
+		texturefile = "gfx/interface/goals/focus_POL_jaszczur_krzykacz.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_protesty_w_wawie"
+		texturefile = "gfx/interface/goals/focus_POL_protesty_w_wawie.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_rolnicy_niezadowoleni"
+		texturefile = "gfx/interface/goals/focus_POL_rolnicy_niezadowoleni.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_zatruta_wisla"
+		texturefile = "gfx/interface/goals/focus_POL_zatruta_wisla.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_dziwni_goscie"
+		texturefile = "gfx/interface/goals/focus_POL_dziwni_goscie.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_zamach_stanu"
+		texturefile = "gfx/interface/goals/focus_POL_zamach_stanu.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_lodz_centrum_buntow"
+		texturefile = "gfx/interface/goals/focus_POL_lodz_centrum_buntow.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_decydujace_posiedzenie"
+		texturefile = "gfx/interface/goals/focus_POL_decydujace_posiedzenie.dds"
+	}
+
+	# Po buncie (opcje)
+	SpriteType = {
+		name = "GFX_focus_POL_opcja_lewica"
+		texturefile = "gfx/interface/goals/focus_POL_opcja_lewica.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_opcja_prawica"
+		texturefile = "gfx/interface/goals/focus_POL_opcja_prawica.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_opcja_dziwna"
+		texturefile = "gfx/interface/goals/focus_POL_opcja_dziwna.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_opcja_anarchia"
+		texturefile = "gfx/interface/goals/focus_POL_opcja_anarchia.dds"
+	}
+
+	# Samoobrona
+	SpriteType = {
+		name = "GFX_focus_POL_opcja_lepper"
+		texturefile = "gfx/interface/goals/focus_POL_opcja_lepper.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_przywrocenie_kontrwywiadu"
+		texturefile = "gfx/interface/goals/focus_POL_przywrocenie_kontrwywiadu.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_wszystkich_won"
+		texturefile = "gfx/interface/goals/focus_POL_wszystkich_won.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_reformy_w_abw"
+		texturefile = "gfx/interface/goals/focus_reformy_w_abw.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_lepper_didnt_kill_himself"
+		texturefile = "gfx/interface/goals/focus_POL_lepper_didnt_kill_himself.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_wasik_kaminski_za_kraty"
+		texturefile = "gfx/interface/goals/focus_POL_wasik_kaminski_za_kraty.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_przyjaciele_z_moskwy"
+		texturefile = "gfx/interface/goals/focus_POL_przyjaciele_z_moskwy.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_delegalizacja_popisu"
+		texturefile = "gfx/interface/goals/focus_POL_delegalizacja_popisu.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_wyjasnienie_seksafery"
+		texturefile = "gfx/interface/goals/focus_POL_wyjasnienie_seksafery.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_wyjasnienie_afery_gruntowej"
+		texturefile = "gfx/interface/goals/focus_POL_wyjasnienie_afery_gruntowej.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_nie_ufajmy_ue"
+		texturefile = "gfx/interface/goals/focus_POL_nie_ufajmy_ue.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_odrodzenie_ursusa_i_pgrow"
+		texturefile = "gfx/interface/goals/focus_POL_odrodzenie_ursusa_i_pgrow.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_nowy_lepszy_prl"
+		texturefile = "gfx/interface/goals/focus_POL_nowy_lepszy_prl.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_czy_sie_stoi"
+		texturefile = "gfx/interface/goals/focus_POL_czy_sie_stoi.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_kto_wzial_lapowe"
+		texturefile = "gfx/interface/goals/focus_POL_kto_wzial_lapowe.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_usunac_balcerowicza"
+		texturefile = "gfx/interface/goals/focus_POL_usunac_balcerowicza.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_zdelegalizujmy_neoliberalizm"
+		texturefile = "gfx/interface/goals/focus_POL_zdelegalizujmy_neoliberalizm.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_dorodne_zniwa"
+		texturefile = "gfx/interface/goals/focus_POL_dorodne_zniwa.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_komunizm_z_ludzka_twarza"
+		texturefile = "gfx/interface/goals/focus_POL_komunizm_z_ludzka_twarza.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_zaoranie_korwinistow"
+		texturefile = "gfx/interface/goals/focus_POL_zaoranie_korwinistow.dds"
+	}
+
+	# PiS - partia
+	SpriteType = {
+		name = "GFX_focus_POL_opcja_pis"
+		texturefile = "gfx/interface/goals/focus_POL_opcja_pis.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_opcja_kowalski"
+		texturefile = "gfx/interface/goals/focus_POL_opcja_kowalski.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_opcja_ziobro"
+		texturefile = "gfx/interface/goals/focus_POL_opcja_ziobro.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_opcja_kaczynski"
+		texturefile = "gfx/interface/goals/focus_POL_opcja_kaczynski.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_opcja_morawiecki"
+		texturefile = "gfx/interface/goals/focus_POL_opcja_morawiecki.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_opcja_rada_liderow"
+		texturefile = "gfx/interface/goals/focus_POL_opcja_rada_liderow.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_reforma_rolna_goal"
+		texturefile = "gfx/interface/goals/focus_POL_reforma_rolna_goal.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_radio_maryja"
+		texturefile = "gfx/interface/goals/focus_POL_radio_maryja.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_sila_beretu"
+		texturefile = "gfx/interface/goals/focus_POL_sila_beretu.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_balcer_musi_odejsc"
+		texturefile = "gfx/interface/goals/focus_POL_balcer_musi_odejsc.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_powrot_pgr"
+		texturefile = "gfx/interface/goals/focus_POL_powrot_pgr.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_szafarowicz"
+		texturefile = "gfx/interface/goals/focus_POL_szafarowicz.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_dopasc_giertycha"
+		texturefile = "gfx/interface/goals/focus_POL_dopasc_giertych.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_popularnosc_wsrod_rolnikow"
+		texturefile = "gfx/interface/goals/focus_POL_popularnosc_wsrod_rolnikow.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_dziedzictwo_olszewskiego"
+		texturefile = "gfx/interface/goals/focus_POL_dziedzictwo_olszewskiego.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_kaczka"
+		texturefile = "gfx/interface/goals/focus_POL_kaczka.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_etatyzm"
+		texturefile = "gfx/interface/goals/focus_POL_etatyzm.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_odrzucenie_ase"
+		texturefile = "gfx/interface/goals/focus_POL_odrzucenie_ase.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_500plus"
+		texturefile = "gfx/interface/goals/focus_POL_500plus.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_800plus"
+		texturefile = "gfx/interface/goals/focus_POL_800plus.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_1000plus"
+		texturefile = "gfx/interface/goals/focus_POL_1000plus.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_stalinflacja"
+		texturefile = "gfx/interface/goals/focus_POL_stalinflacja.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_manipulacja_cenami_paliw"
+		texturefile = "gfx/interface/goals/focus_POL_manipulacja_cenami_paliw.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_menel_europy"
+		texturefile = "gfx/interface/goals/focus_POL_menel_europy.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_reforma_sprawiedliwosci"
+		texturefile = "gfx/interface/goals/focus_POL_reforma_sprawiedliwosci.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_trybunal_przylebskiej"
+		texturefile = "gfx/interface/goals/focus_POL_trybunal_przylebskiej.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_ban_tvn"
+		texturefile = "gfx/interface/goals/focus_POL_ban_tvn.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_tvpis"
+		texturefile = "gfx/interface/goals/focus_POL_tvpis.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_delegalizacja_opozycji"
+		texturefile = "gfx/interface/goals/focus_POL_delegalizacja_opozycji.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_los_porozumienia_centrum"
+		texturefile = "gfx/interface/goals/focus_POL_los_porozumienia_centrum.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_minister_emilewicz"
+		texturefile = "gfx/interface/goals/focus_POL_minister_emilewicz.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_polski_rolnik_polskie_pole"
+		texturefile = "gfx/interface/goals/focus_POL_polski_rolnik_polskie_pole.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_karol_nawrocki_prezydentem_polski"
+		texturefile = "gfx/interface/goals/focus_POL_karol_nawrocki_prezydentem_polski.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_rozwalenie_gospodarki"
+		texturefile = "gfx/interface/goals/focus_POL_rozwalenie_gospodarki.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_kaczafi_goal"
+		texturefile = "gfx/interface/goals/focus_POL_kaczafi_goal.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_lekki_prl"
+		texturefile = "gfx/interface/goals/focus_POL_lekki_prl.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_towarzysz_napoleon"
+		texturefile = "gfx/interface/goals/focus_POL_towarzysz_napoleon.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_drukowanie_pieniedzy"
+		texturefile = "gfx/interface/goals/focus_POL_drukowanie_pieniedzy.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_zalozmy_kaczorowi_x"
+		texturefile = "gfx/interface/goals/focus_POL_zalozmy_kaczorowi_x.dds"
+	}
+
+	# PiS - Macierewicz
+	SpriteType = {
+		name = "GFX_focus_POL_opcja_macierewicz"
+		texturefile = "gfx/interface/goals/focus_POL_opcja_macierewicz.dds"
+	}
+
+
+	# Drzewko armii
+
+	SpriteType = {
+		name = "GFX_focus_POL_reorganizacja_armii"
+		texturefile = "gfx/interface/goals/focus_POL_reorganizacja_armii.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_POL_za_wielka_polske"
+		texturefile = "gfx/interface/goals/focus_POL_za_wielka_polske.dds"
+	}
+
+	# Generic
+
+	SpriteType = {
+		name = "GFX_goal_unknown"
+		texturefile = "gfx/interface/goals/goal_unknown.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_local_unknown"
+		texturefile = "gfx/interface/goals/goal_unknown.dds"
+	}
+}

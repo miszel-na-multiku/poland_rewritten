@@ -1,0 +1,73 @@
+# Będzie usuwane w najbliższym czasie
+
+
+
+
+add_namespace = POL_mod_events
+
+# GENERIC
+
+# Po wojnie domowej
+# LEPPER
+# Pi
+
+country_event = { # Kaminski - bojka z antkiem
+	id = POL_mod_events.10
+	title = POL_mod_events.10.t
+	desc = POL_mod_events.10.d
+	picture = GFX_report_event_generic_read_write # W I P
+	fire_only_once = yes
+
+	trigger = {
+		tag = POL
+		has_completed_focus = POL_opcja_macierewicz
+	}
+
+	option = {
+		name = POL_mod_events.10.o1
+	}
+}
+
+country_event = { # Braun gasi chanuke
+	id = POL_mod_events.11
+	title = POL_mod_events.11.t
+	desc = POL_mod_events.11.d
+	picture = GFX_report_event_generic_read_write # W I P
+	fire_only_once = yes
+
+	trigger = {
+		tag = POL
+		date = 1938.1.1
+		NOT = { 
+			has_country_leader = POL_grzegorz_braun
+			has_country_leader = POL_antoni_macierewicz
+			has_country_leader = POL_wojciech_olszanski
+	 }
+	}
+
+	option = {
+		name = POL_mod_events.11.o1
+	}
+}
+
+country_event = { # Niemcy wypowiadają nam wojnę
+	id = POL_mod_events.12
+	title = POL_mod_events.12.t
+	desc = POL_mod_events.12.d
+	picture = GFX_report_event_generic_read_write # W I P
+	fire_only_once = yes
+
+	trigger = {
+		tag = POL
+		has_war_with = { tag = GER }
+		NOT = { 
+			has_country_leader = POL_donald_tusk
+	 	}
+	}
+
+	option = {
+		name = POL_mod_events.12.o1
+	}
+	
+	POL = {sound_effect = dzis_o_piatej}
+}

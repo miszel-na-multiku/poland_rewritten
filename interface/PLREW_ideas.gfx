@@ -1,0 +1,119 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_idea_naciski_ue"
+		texturefile = "gfx/interface/ideas/spirits/naciski_ue.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_jp2"
+		texturefile = "gfx/interface/ideas/spirits/jp2.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_rozwalone_sadownictwo"
+		texturefile = "gfx/interface/ideas/spirits/rozwalone_sadownictwo.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_dwa_tysiace_sie_nalezy"
+		texturefile = "gfx/interface/ideas/spirits/dwa_tysiace_sie_nalezy.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_orlen"
+		texturefile = "gfx/interface/ideas/spirits/orlen.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_pgr"
+		texturefile = "gfx/interface/ideas/spirits/pgr.dds" 
+	}
+	spriteType = {
+		name = "GFX_reforma_rolna"
+		texturefile = "gfx/interface/ideas/spirits/reforma_rolna.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_tvpis"
+		texturefile = "gfx/interface/ideas/spirits/tvpis.dds"
+	}
+	spriteType = {
+		name = "GFX_zatruta_wisla"
+		texturefile = "gfx/interface/ideas/spirits/zatruta_wisla.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_500+"
+		texturefile = "gfx/interface/ideas/spirits/500+.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_800+"
+		texturefile = "gfx/interface/ideas/spirits/800+.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_1000+"
+		texturefile = "gfx/interface/ideas/spirits/1000+.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_zloty_wiek_rolnictwa"
+		texturefile = "gfx/interface/ideas/spirits/zloty_wiek_rolnictwa.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_zreformowane_abw"
+		texturefile = "gfx/interface/ideas/spirits/zreformowane_abw.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_zdelegalizuj_popis"
+		texturefile = "gfx/interface/ideas/spirits/zdelegalizuj_popis.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_rozwalona_armia"
+		texturefile = "gfx/interface/ideas/spirits/rozwalona_armia.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_tyrania_wiekszosci"
+		texturefile = "gfx/interface/ideas/spirits/tyrania_wiekszosci.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_trybunal_niekonstytucyjny"
+		texturefile = "gfx/interface/ideas/spirits/trybunal_niekonstytucyjny.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_sprywatyzowane_sadownictwo"
+		texturefile = "gfx/interface/ideas/spirits/sprywatyzowane_sadownictwo.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_socjalizm"
+		texturefile = "gfx/interface/ideas/spirits/socjalizm.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_skorumpowane_sadownictwo"
+		texturefile = "gfx/interface/ideas/spirits/skorumpowane_sadownictwo.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_sejmersi"
+		texturefile = "gfx/interface/ideas/spirits/sejmersi.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_radio_maryja"
+		texturefile = "gfx/interface/ideas/spirits/radio_maryja.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_polski_chleb"
+		texturefile = "gfx/interface/ideas/spirits/polski_chleb.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_naprawione_sadownictwo"
+		texturefile = "gfx/interface/ideas/spirits/naprawione_sadownictwo.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_menel_europy"
+		texturefile = "gfx/interface/ideas/spirits/menel_europy.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_katotaliban"
+		texturefile = "gfx/interface/ideas/spirits/katotaliban.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_kaczafi"
+		texturefile = "gfx/interface/ideas/spirits/kaczafi.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_etatyzm"
+		texturefile = "gfx/interface/ideas/spirits/etatyzm.dds"
+	}
+}

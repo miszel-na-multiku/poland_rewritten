@@ -1,0 +1,353 @@
+music = {
+	name = "Hymn Samoobrony"
+	file = "hymn_samoobrony.ogg"
+}
+music = {
+	name = "Polityczny los"
+	file = "polityczny_los.ogg"
+}
+music = {
+	name = "Gwiazda lśni"
+	file = "gwiazda_lsni.ogg"
+}
+music = {
+	name = "Warsaw pact"
+	file = "warsaw_pact.ogg"
+}
+music = {
+	name = "Dziambor hot16"
+	file = "dziambor_hot.ogg"
+}
+music = {
+	name = "Berkowicz hot16"
+	file = "berkowicz_hot.ogg"
+}
+music = {
+	name = "Antoni wzywa do broni"
+	file = "antoni_wzywa.ogg"
+}
+music = {
+	name = "Makumba"
+	file = "makumba.ogg"
+}
+music = {
+	name = "Moherowe berety"
+	file = "moherowe_berety.ogg"
+}
+music = {
+	name = "Święta wojna"
+	file = "swieta_wojna.ogg"
+}
+music = {
+	name = "Kocham wolność"
+	file = "kocham_wolnosc.ogg"
+}
+music = {
+	name = "Ty jesteś Duda"
+	file = "ty_jestes_duda.ogg"
+}
+music = {
+	name = "Chcemy żyć normalnie"
+	file = "zyc_normalnie.ogg"
+}
+music = {
+	name = "Bolszewika - Goń z pomnika"
+	file = "gon_z_pomnika.ogg"
+}
+music = {
+	name = "JBĆ PiS"
+	file = "jbc_pis.ogg"
+}
+music = {
+	name = "Wielkanocy nie będzie"
+	file = "wielkanocy_nie_bedzie.ogg"
+}
+music = {
+	name = "Przystanek Czarneckiego"
+	file = "przystanek_czarneckiego.ogg"
+}
+music = {
+	name = "Zbigniew Ziobro czyni dobro"
+	file = "ziobro_czyni_dobro.ogg"
+}
+music = {
+	name = "Idźmy, bijmy Moskali"
+	file = "idzmy_bijmy_mosakli.ogg"
+}
+music = {
+	name = "Do przodu POlsko"
+	file = "do_przodu_polsko.ogg"
+}
+music = {
+	name = "Sośnierz hot16"
+	file = "sosnierz_hot.ogg"
+}
+music = {
+	name = "Marsz Obrońców Moskwy"
+	file = "marsz_obroncow_moskwy.ogg"
+}
+music = {
+	name = "Czarny chleb i czarna kawa"
+	file = "czarny_chleb_i_kawa.ogg"
+}
+music = {
+	name = "Czerepach Theme"
+	file = "czerepach.ogg"
+}
+music = {
+	name = "Hymn Niemiec"
+	file = "hym_niemiec.ogg"
+}
+music = {
+	name = "Witajcie w nowej bajce"
+	file = "witajcie_w_nowej_bajce.ogg"
+}
+music = {
+	name = "Hej Sokoły"
+	file = "hej_sokoly.ogg"
+}
+music = {
+	name = "Braun hot16"
+	file = "braun_hot.ogg"
+}
+music = {
+	name = "Fur Deutchland"
+	file = "przemowienie_idola.ogg"
+}
+music = {
+	name = "Jarosław KA"
+	file = "jaroslaw_ka.ogg"
+}
+music = {
+	name = "Hymn Unii Polityki Realnej"
+	file = "hymn_upr.ogg"
+}
+music = {
+	name = "JKM - Shape of you"
+	file = "shape_of_korwin.ogg"
+}
+music = {
+	name = "In Honolulu"
+	file = "in_honolulu.ogg"
+}
+music = {
+	name = "JKM - Yellow Submarine"
+	file = "yellow_submarine.ogg"
+}
+music = {
+	name = "Hymn Partii Kosiniaka Al-Assada"
+	file = "kamysz_assad.ogg"
+}
+music = {
+	name = "Korwin hot16"
+	file = "korwin_hot.ogg"
+}
+music = {
+	name = "Hymn PiS-u"
+	file = "pis_hymn.ogg"
+}
+music = {
+	name = "Hymn Sybiraków"
+	file = "hymn_sybiraków.ogg"
+}
+music = {
+	name = "Idą leśni"
+	file = "ida_lesni.ogg"
+}
+music = {
+	name = "Balcerowicz musi wrócić - Hiperinflacja"
+	file = "balcerowicz_musi_wrocic.ogg"
+}
+music = {
+	name = "Jarosław"
+	file = "jaroslaw_parody.ogg"
+}
+music = {
+	name = "Wolnościowiec w Łagrze"
+	file = "wolnosciowiec_w_lagrze.ogg"
+}
+music = {
+	name = "Austriacka szkoła ekonomii"
+	file = "austriacka_szkola.ogg"
+}
+music = {
+	name = "O Grzegorz Braun"
+	file = "o_grzegorz_braun.ogg"
+}
+music = {
+	name = "KULT - Po co wolność"
+	file = "po_co_wam_wolnosc.ogg"
+}
+music = {
+	name = "Kołysanka Platformy"
+	file = "kolysanka_platformerska.ogg"
+}
+music = {
+	name = "JKM - Przywrócimy normalność"
+	file = "przywrocimy_normalnosc.ogg"
+}
+music = {
+	name = "Berkowitz - Sprawa osobista"
+	file = "sprawa_osobista.ogg"
+}
+music = {
+	name = "Jadą wierni z daleka"
+	file = "jada_wierni.ogg"
+}
+music = {
+	name = "Marsz Triumfalny Jana III Sobieskiego"
+	file = "marsz_jana_sobieskiego.ogg"
+}
+
+music = {
+	name = "Mój jest ten kawałek podłogi"
+	file = "moj_jest_ten_kawalek_podlogi.ogg"
+}
+music = {
+	name = "Mury"
+	file = "mury.ogg"
+}
+music = {
+	name = "Psalm do Ziobry"
+	file = "ziobro_zbigniewie.ogg"
+}
+
+music = {
+	name = "Zarabiaj hajs"
+	file = "zarabiaj_hajs.ogg"
+}
+
+music = {
+	name = "Lwów na zawsze polski"
+	file = "lwow_na_zawsze_polski.ogg"
+}
+
+music = {
+	name = "Mamy kurwa Tuska"
+	file = "mamy_kurwa_tuska.ogg"
+}
+music = {
+	name = "Złodziej rudy"
+	file = "zlodziej_rudy.ogg"
+}
+
+music = {
+	name = "Marsz radzieckich czołgistów"
+	file = "marsz_radzieckich_czolgistow.ogg"
+}
+music = {
+	name = "Chłopcy radarowcy"
+	file = "polska_policja.ogg"
+}
+music = {
+	name = "Polska to ja"
+	file = "polska_to_ja.ogg"
+}
+music = {
+	name = "Polski ład"
+	file = "polski_lad.ogg"
+}
+music = {
+	name = "Wśród nocnej ciszy"
+	file = "wsrod_nocnej_ciszy.ogg"
+}
+music = {
+	name = "Orki z Majorki"
+	file = "orki_z_majorki.ogg"
+}
+music = {
+	name = "Pieśń Zemsty"
+	file = "z_bogiem_i_chocby_mimo_boga.ogg"
+}
+music = {
+	name = "Kamysz Władziu Kosiniak"
+	file = "kamysz_wladzio_kosiniak.ogg"
+}
+music = {
+	name = "Czerwone korale"
+	file = "czerwone_korale.ogg"
+}
+music = {
+	name = "PiS da"
+	file = "pis_da.ogg"
+}
+music = {
+	name = "Rota"
+	file = "rota.ogg"
+}
+music = {
+	name = "Sejmersi"
+	file = "sejmersi.ogg"
+}
+music = {
+	name = "Siekiera, motyka, Korwin-Mikke"
+	file = "siekiera_motyka.ogg"
+}
+music = {
+	name = "SLD - Sojusz Ludzkich Serc"
+	file = "sojusz_ludzkich_serc.ogg"
+}
+music = {
+	name = "Polskie smerfy"
+	file = "polskie_smerfy.ogg"
+}
+music = {
+	name = "Ole Olek"
+	file = "olek.ogg"
+}
+music = {
+	name = "PiSowskie dranie"
+	file = "pisowskie_dranie.ogg"
+}
+music = {
+	name = "Mietowa herbata"
+	file = "mietowa_herbata.ogg"
+}
+music = {
+	name = "Na konfederacje"
+	file = "na_konfederacje.ogg"
+}
+music = {
+	name = "Sigma Boi"
+	file = "sigma_boi.ogg"
+}
+music = {
+	name = "Serce po lewej"
+	file = "serce_po_lewej.ogg"
+}
+music = {
+	name = "Żurawiejki"
+	file = "zurawiejki.ogg"
+}
+music = {
+	name = "YMCA"
+	file = "ymca.ogg"
+}
+music = {
+	name = "W strone słońca"
+	file = "w_strone_slonca.ogg"
+}
+music = {
+	name = "Z przekazem do Polaków"
+	file = "z_przekazem_do_polakow.ogg"
+}
+music = {
+	name = "Pan Duda"
+	file = "pan_duda.ogg"
+}
+music = {
+	name = "Pieśń syryjskich nacjonalistów"
+	file = "piesn_syryjskich_nacjonalistow.ogg"
+}
+music = {
+	name = "Polskie sztandary na Kremlu"
+	file = "polskie_sztandary_na_kremlu.ogg"
+}
+music = {
+	name = "Szwoleżerowe"
+	file = "szwolezerowie.ogg"
+}
+music = {
+	name = "Trzaskopolo"
+	file = "trzaskopolo.ogg"
+}

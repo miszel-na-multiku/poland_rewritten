@@ -1,0 +1,22 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_MOD_event_civilwar"
+		texturefile = "gfx/events/event_zamachstanu.dds"
+	}
+	spriteType = {
+		name = "GFX_MOD_event_sejm_meeting"
+		texturefile = "gfx/events/event_decydujaceposiedzenie.dds"
+	}
+	spriteType = {
+		name = "GFX_event_pis_frakcje"
+		texturefile = "gfx/events/event_pis_frakcje.dds" 
+	}
+	spriteType = {
+		name = "GFX_world_news_lepper"
+		texturefile = "gfx/events/world_news/lepper_przejmuje_wladze.dds" 
+	}
+	spriteType = {
+		name = "GFX_world_news_pis"
+		texturefile = "gfx/events/world_news/pis_przejmuje_wladze.dds" 
+	}
+}

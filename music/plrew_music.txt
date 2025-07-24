@@ -1,0 +1,775 @@
+music_station = "plrew_radio"
+music = {
+    song = "Hymn Samoobrony"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Polityczny los"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Gwiazda lśni"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Warsaw pact"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Dziambor hot16"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Berkowicz hot16"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Antoni wzywa do broni"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Makumba"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Moherowe berety"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Święta wojna"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Kocham wolność"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Ty jesteś Duda"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Chcemy żyć normalnie"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Bolszewika - Goń z pomnika"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "JBĆ PiS"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Wielkanocy nie będzie"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Przystanek Czarneckiego"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Zbigniew Ziobro czyni dobro"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Do przodu POlsko"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Sośnierz hot16"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Marsz Obrońców Moskwy"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Czarny chleb i czarna kawa"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Czerepach Theme"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Hymn Niemiec"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Witajcie w nowej bajce"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Hej Sokoły"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Braun hot16"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Fur Deutchland"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Jarosław KA"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Hymn Unii Polityki Realnej"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "JKM - Shape of you"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "In Honolulu"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "JKM - Yellow Submarine"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Hymn Partii Kosiniaka Al-Assada"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Korwin hot16"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Hymn PiS-u"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Hymn Sybiraków"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Idą leśni"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Balcerowicz musi wrócić - Hiperinflacja"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Jarosław"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Wolnościowiec w Łagrze"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Austriacka szkoła ekonomii"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "O Grzegorz Braun"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "KULT - Po co wolność"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Kołysanka Platformy"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "JKM - Przywrócimy normalność"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Berkowicz - Sprawa osobista"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Jadą wierni z daleka"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Marsz Triumfalny Jana III Sobieskiego"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Mój jest ten kawałek podłogi"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Mury"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Psalm do Ziobry"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Zarabiaj hajs"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Lwów na zawsze polski"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Mamy kurwa Tuska"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Złodziej rudy"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Marsz radzieckich czołgistów"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Chłopcy radarowcy"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Polska to ja"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Polski ład"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Wśród nocnej ciszy"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Orki z Majorki"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Pieśń Zemsty"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Kamysz Władziu Kosiniak"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Czerwone korale"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "PiS da"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Serce po lewej"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Rota"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Sejmersi"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Siekiera, motyka, Korwin-Mikke"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "SLD - Sojusz Ludzkich Serc"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Polskie smerfy"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Ole Olek"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "PiSowskie dranie"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Mietowa herbata"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Na konfederacje"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Sigma Boi"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Żurawiejki"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "YMCA"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "W strone słońca"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Z przekazem do Polaków"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Pan Duda"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Pieśń syryjskich nacjonalistów"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Polskie sztandary na Kremlu"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Szwoleżerowe"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}
+music = {
+    song = "Trzaskopolo"
+    chance = {
+        factor = 0
+        modifier = {
+            factor = 100
+        }
+    }
+}

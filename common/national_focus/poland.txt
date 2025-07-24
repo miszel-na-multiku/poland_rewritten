@@ -1,0 +1,8103 @@
+focus_tree = {
+	id = polish_focus
+
+	country = {
+		base = 0
+
+		modifier = {
+			add = 10
+			tag = POL
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 150 y = 5000 }
+	initial_show_position = { focus = POL_trzesienie_ziemii }
+
+	# Focuses
+	focus = { # do testów
+		id = POL_DEBUG_FOCUS
+		icon = GFX_800plus
+		x = 0
+		y = 0
+		allow_branch = {
+			always = yes # Pokazuj: tak/nie
+		}
+		completion_reward = {
+			set_party_name = {
+				ideology = democratic
+				long_name = PO_LONG
+				name = PO_SHORT
+			}
+		}
+	}
+
+
+	focus = {
+		id = POL_trzesienie_ziemii
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 1.5
+		x = 30
+		y = 5
+		bypass = {
+			NOT = {
+				owns_state = 97
+			}
+		}
+		completion_reward = {
+			add_stability = -0.05
+			every_owned_state = {
+				limit = { state = 97 }
+				add_building_construction = {
+					type = infrastructure
+					level = -1
+				}
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.1
+			}
+		}
+	}
+	focus = {
+		id = POL_bydgoskie_zamieszki
+		icon = GFX_focus_POL_bydgoskie_zamieszki
+		x = 0
+		y = 1
+		relative_position_id = POL_trzesienie_ziemii
+		cost = 1.5
+		prerequisite = {
+			focus = POL_trzesienie_ziemii
+		}
+		bypass = {
+			NOT = {
+				owns_state = 807
+			}
+		}
+		completion_reward = {
+			add_stability = -0.10
+			add_manpower = -500
+		}
+	}
+	focus = {
+		id = POL_krakow_bojowki
+		icon = GFX_focus_POL_krakow_bojowki
+		x = 0
+		y = 2
+		cost = 1.5
+		relative_position_id = POL_trzesienie_ziemii
+		prerequisite = {
+			focus = POL_bydgoskie_zamieszki
+		}
+		bypass = {
+			NOT = {
+				owns_state = 88
+			}
+		}
+		completion_reward = {
+			add_stability = -0.05
+			add_manpower = -900
+			every_owned_state = {
+				limit = { state = 88 }
+				add_building_construction = {
+					type = industrial_complex
+					level = -1
+				}
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = POL_nawiedzenie_wadowickie
+		icon = GFX_focus_POL_nawiedzenie_wadowickie
+		x = -1
+		y = 3
+		relative_position_id = POL_trzesienie_ziemii
+		cost = 1.5
+		prerequisite = {
+			focus = POL_krakow_bojowki
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_ideas = POL_jp2
+		}
+	}
+	focus = {
+		id = POL_pozar_we_lwowie
+		icon = GFX_focus_POL_pozar_we_lwowie
+		x = -1
+		y = 4
+		relative_position_id = POL_trzesienie_ziemii
+		cost = 1.5
+		prerequisite = {
+			focus = POL_nawiedzenie_wadowickie
+		}
+		bypass = {
+			NOT = {
+				owns_state = 91
+			}
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			every_owned_state = {
+				limit = { state = 91 }
+				add_building_construction = {
+					type = infrastructure
+					level = -1
+				}
+			}
+		}
+	}
+	focus = {
+		id = POL_gdanski_ruch_proniemiecki
+		icon = GFX_focus_POL_gdanski_ruch_proniemiecki
+		x = 1
+		y = 3
+		relative_position_id = POL_trzesienie_ziemii
+		cost = 2.2
+		prerequisite = {
+			focus = POL_krakow_bojowki
+		}
+		bypass = {
+			NOT = {
+				owns_state = 85
+			}
+		}
+		
+		completion_reward = {
+			DNZ = {
+				set_state_owner = 85
+				set_state_controller = 85
+
+				add_stability = 0.15
+				give_military_access = GER
+			}
+			GER = {
+				give_guarantee = DNZ
+			}
+		}
+	}
+	focus = {
+		id = POL_poznan_niemieccy_szpiedzy
+		icon = GFX_focus_POL_poznan_niemieccy_szpiedzy
+		x = 1
+		y = 4
+		relative_position_id = POL_trzesienie_ziemii
+		cost = 2.2
+		prerequisite = {
+			focus = POL_gdanski_ruch_proniemiecki
+		}
+		bypass = {
+			NOT = {
+				owns_state = 86
+			}
+		}
+		completion_reward = {
+			86 = {
+				add_core_of = GER 
+			}
+			807 = {
+				add_core_of = GER 
+			}
+		}
+	}
+	focus = {
+		id = POL_jaszczur_krzykacz
+		icon = GFX_focus_POL_jaszczur_krzykacz
+		x = 0
+		y = 5
+		relative_position_id = POL_trzesienie_ziemii
+		cost = 1.5
+		prerequisite = {
+			focus = POL_pozar_we_lwowie
+		}
+		prerequisite = {
+			focus = POL_poznan_niemieccy_szpiedzy
+		}
+		completion_reward = {
+			add_stability = -0.05
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = POL_protesty_w_wawie
+		icon = GFX_focus_POL_protesty_w_wawie
+		x = -2
+		y = 6
+		relative_position_id = POL_trzesienie_ziemii
+		cost = 1.5
+		prerequisite = {
+			focus = POL_jaszczur_krzykacz
+		}
+		bypass = {
+			NOT = {
+				owns_state = 10
+			}
+		}
+		completion_reward = {
+			add_stability = -0.10
+			add_war_support = 0.15
+			add_popularity = {
+				ideology = communism
+				popularity = -0.05
+			}
+		}
+	}
+	focus = {
+		id = POL_dziwni_goscie
+		icon = GFX_focus_POL_dziwni_goscie
+		x = 0
+		y = 6
+		relative_position_id = POL_trzesienie_ziemii
+		cost = 1.5
+		prerequisite = {
+			focus = POL_jaszczur_krzykacz
+		}
+		completion_reward = {
+			set_party_name = {
+				ideology = democratic
+				long_name = "Kancelaria Sejmu i Senatu"
+				name = "KSiS"
+			}
+			add_ideas = POL_sejmersi
+		}
+	}
+	focus = {
+		id = POL_lodz_centrum_buntow
+		icon = GFX_focus_POL_lodz_centrum_buntow
+		x = 2
+		y = 6
+		relative_position_id = POL_trzesienie_ziemii
+		cost = 0.8
+		prerequisite = {
+			focus = POL_jaszczur_krzykacz
+		}
+		completion_reward = {
+			add_ideas = POL_unloyal_army
+		}
+	}
+	focus = {
+		id = POL_rolnicy_niezadowoleni
+		icon = GFX_focus_POL_rolnicy_niezadowoleni
+		x = -4
+		y = 7
+		relative_position_id = POL_trzesienie_ziemii
+		cost = 1.5
+		prerequisite = {
+			focus = POL_protesty_w_wawie
+		}
+		completion_reward = {
+			add_stability = -0.10
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.10
+			}
+			add_political_power = -50
+		}
+	}
+	focus = {
+		id = POL_zatruta_wisla
+		icon = GFX_focus_POL_zatruta_wisla
+		x = -2
+		y = 7
+		relative_position_id = POL_trzesienie_ziemii
+		cost = 0.8
+		prerequisite = {
+			focus = POL_protesty_w_wawie
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.05
+			}
+		}
+	}
+	focus = {
+		id = POL_zamach_stanu
+		icon = GFX_focus_POL_zamach_stanu
+		x = 0
+		y = 7
+		relative_position_id = POL_trzesienie_ziemii
+		cost = 5
+		available = {
+			has_completed_focus = POL_rolnicy_niezadowoleni
+			has_completed_focus = POL_zatruta_wisla
+		}
+		prerequisite = {
+			focus = POL_dziwni_goscie
+		}
+		prerequisite = {
+			focus = POL_lodz_centrum_buntow
+		}
+		completion_reward = {
+			promote_character = POL_zgromadzenie
+			country_event = { id = poland.27 }
+			custom_effect_tooltip = POL_wojna_domowa_decyzje_tt
+			hidden_effect = {
+				set_politics = {
+					ruling_party = democratic
+				}
+				start_civil_war = {
+					ideology = neutrality
+					size = 0.5
+				}
+				add_ideas = POL_european_pressure
+				add_ideas = POL_broken_justice_system
+				add_ideas = POL_jp2
+				add_ideas = POL_sejmersi
+				add_ideas = POL_unloyal_army
+				add_ideas = POL_wojna_domowa
+				set_cosmetic_tag = POL_IIRP
+
+				activate_mission = POL_german_action
+				activate_mission = POL_lithuanian_action
+				activate_mission = POL_ukrainian_action
+
+
+				every_country = {
+					limit = {
+						has_war_with = ROOT
+					}
+					add_ideas = POL_wojna_domowa
+					set_cosmetic_tag = POL_SANATION
+				}
+			}
+		}
+	}
+	focus = {
+		id = POL_decydujace_posiedzenie
+		icon = GFX_focus_POL_decydujace_posiedzenie
+		x = 0
+		y = 8
+		relative_position_id = POL_trzesienie_ziemii
+		cost = 2.2
+		available = {
+			has_war = no
+		}
+		prerequisite = {
+			focus = POL_rolnicy_niezadowoleni
+		}
+		prerequisite = {
+			focus = POL_zatruta_wisla
+		}
+		prerequisite = {
+			focus = POL_zamach_stanu
+		}
+
+		completion_reward = {
+			add_stability = 0.3
+			add_ideas = POL_wrogowie_wewnetrzni
+			country_event = { id = poland.28 }
+
+			hidden_effect = {
+				remove_ideas = POL_wojna_domowa
+			}
+		}
+	}
+
+	# ------
+	# PRAWICA
+	# ------
+	focus = {
+		id = POL_opcja_prawica
+		icon = GFX_focus_POL_opcja_prawica
+		x = -16
+		y = 1
+		relative_position_id = POL_decydujace_posiedzenie
+		cost = 0
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_centrum
+					has_completed_focus = POL_opcja_lewica
+					has_completed_focus = POL_opcja_anarchia
+					has_completed_focus = POL_opcja_dziwna
+				}
+			}
+		}
+		prerequisite = {
+			focus = POL_decydujace_posiedzenie
+		}
+		available = {
+			always = no
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_centrum
+			focus = POL_opcja_lewica
+			focus = POL_opcja_anarchia
+			focus = POL_opcja_dziwna
+		}
+		offset = {
+			x = 16
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_prawica
+			}
+		}
+		completion_reward = {
+			show_unit_leaders_tooltip = POL_mariusz_kaminski
+			show_unit_leaders_tooltip = POL_maciej_wasik
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+
+	}
+
+	# LEPPER
+
+	focus = {
+		id = POL_opcja_lepper
+		icon = GFX_focus_POL_opcja_lepper
+		x = -19
+		y = 1
+		relative_position_id = POL_opcja_prawica
+		cost = 5
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_pis
+					has_completed_focus = POL_opcja_konfa
+					has_completed_focus = POL_opcja_kamraci
+					has_completed_focus = POL_opcja_kukiz
+					has_completed_focus = POL_opcja_zero
+				}
+			}
+		}
+		prerequisite = {
+			focus = POL_opcja_prawica
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_pis
+			focus = POL_opcja_konfa
+			focus = POL_opcja_kamraci
+			focus = POL_opcja_kukiz
+			focus = POL_opcja_zero
+		}
+		offset = {
+			x = 19
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_lepper
+			}
+		}
+		completion_reward = {
+			POL = { sound_effect = polske_trzeba_zlepperowac }
+			promote_character = POL_andrzej_lepper
+			set_politics = { ruling_party = communism }
+			remove_ideas = POL_sejmersi
+			set_cosmetic_tag = POL_lepperism
+			custom_effect_tooltip = POL_nowi_generalowie
+			hidden_effect = {
+				news_event = { id = PLREW_world_news.1 }
+				mark_focus_tree_layout_dirty = yes
+				add_popularity = {
+					ideology = communism
+					popularity = 0.2
+				}
+				add_stability = 0.10
+				set_party_name = {
+					ideology = communism
+					long_name = SAMOOBRONA_LONG
+					name = SAMOOBRONA_SHORT
+				}
+				# opozycja
+				add_country_leader_role = {
+                    character = POL_janusz_korwin_mikke
+                    country_leader = {
+                      ideology = korwinism
+                      expire = "1965.1.1.1"
+                      traits = {}
+					  id=-1
+                    }
+                }
+				set_party_name = {
+					ideology = democratic
+					long_name = PO_LONG
+					name = PO_SHORT
+				}
+				set_party_name = {
+					ideology = neutrality
+					long_name = KON_LONG
+					name = KON_SHORT
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = KAMRACI_LONG
+					name = KAMRACI_SHORT
+				}
+				add_popularity = { # kamraci nie mają tyle poparcia xd
+					ideology = fascism
+					popularity = -0.1
+				}
+				promote_character = POL_donald_tusk
+				promote_character = POL_janusz_korwin_mikke
+				promote_character = POL_wojciech_olszanski
+			}
+		}
+	}
+	focus = {
+		id = POL_przywrocenie_kontrwywiadu
+		icon = GFX_focus_POL_przywrocenie_kontrwywiadu
+		x = -2
+		y = 1
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+
+
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			custom_effect_tooltip = POL_abw_utworzenie
+
+			hidden_effect = {
+				create_intelligence_agency = {
+					name = "ABW"
+					icon = GFX_ABW
+				}	
+			}
+		}
+		prerequisite = {
+			focus = POL_opcja_lepper
+		}
+	}
+	focus = {
+		id = POL_lepper_didnt_kill_himself
+		icon = GFX_focus_POL_lepper_didnt_kill_himself
+		x = 0
+		y = 1
+		relative_position_id = POL_opcja_lepper
+		cost = 3.6
+		completion_reward = {
+			country_event = { id = poland.29 }
+		}
+		prerequisite = {
+			focus = POL_opcja_lepper
+		}
+	}
+	focus = {
+		id = POL_delegalizacja_popisu
+		icon = GFX_focus_POL_delegalizacja_popisu
+		x = 2
+		y = 1
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_lepper
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.30
+			}
+			add_ideas = POL_popis_delegalized
+		}
+	}
+	focus = {
+		id = POL_wszystkich_won
+		icon = GFX_focus_POL_wszystkich_won
+		x = -2
+		y = 2
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		completion_reward = {
+			add_war_support = 0.1
+			swap_ideas = {
+				remove_idea = POL_broken_justice_system
+				add_idea = POL_fixed_justice_system
+			}
+		}
+		prerequisite = {
+			focus = POL_przywrocenie_kontrwywiadu
+		}
+	}
+	focus = {
+		id = POL_wasik_kaminski_za_kraty
+		icon = GFX_focus_POL_wasik_kaminski_za_kraty
+		x = 0
+		y = 2
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		prerequisite = {
+			focus = POL_lepper_didnt_kill_himself
+		}
+		completion_reward = {
+			add_stability = 0.05
+			retire_character = POL_mariusz_kaminski
+			retire_character = POL_maciej_wasik
+		}
+	}
+	focus = {
+		id = POL_wyjasnienie_seksafery
+		icon = GFX_focus_POL_wyjasnienie_seksafery
+		x = 2
+		y = 2
+		relative_position_id = POL_opcja_lepper
+		cost = 2
+		prerequisite = {
+			focus = POL_delegalizacja_popisu
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = POL_reformy_w_abw
+		icon = GFX_focus_POL_reformy_w_abw
+		x = -2
+		y = 3
+		relative_position_id = POL_opcja_lepper
+		cost = 2.9
+		prerequisite = {
+			focus = POL_wszystkich_won
+		}
+		completion_reward = {
+			add_ideas = POL_reformed_abw
+		}
+	}
+	focus = {
+		id = POL_przyjaciele_z_moskwy
+		icon = GFX_focus_POL_przyjaciele_z_moskwy
+		x = 0
+		y = 3
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		prerequisite = {
+			focus = POL_wasik_kaminski_za_kraty
+		}
+		completion_reward = {
+			show_unit_leaders_tooltip = POL_yevgeny_prigozhin
+			show_unit_leaders_tooltip = POL_sergey_shoigu
+		}
+	}
+	focus = {
+		id = POL_wyjasnienie_afery_gruntowej
+		icon = GFX_focus_POL_wyjasnienie_afery_gruntowej
+		x = 2
+		y = 3
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		prerequisite = {
+			focus = POL_wyjasnienie_seksafery
+		}
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = POL_nie_ufajmy_ue
+		icon = GFX_focus_POL_nie_ufajmy_ue
+		x = 0
+		y = 4
+		relative_position_id = POL_opcja_lepper
+		cost = 10
+		prerequisite = {
+			focus = POL_reformy_w_abw
+		}
+		prerequisite = {
+			focus = POL_przyjaciele_z_moskwy
+		}
+		prerequisite = {
+			focus = POL_wyjasnienie_afery_gruntowej
+		}
+		completion_reward = {
+			add_war_support = 0.2
+			remove_ideas = POL_european_pressure		
+		}
+	}
+	focus = {
+		id = POL_odrodzenie_ursusa_i_pgrow
+		icon = GFX_focus_POL_odrodzenie_ursusa_i_pgrow
+		x = 2
+		y = 5
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		prerequisite = {
+			focus = POL_nie_ufajmy_ue
+		}
+		completion_reward = {
+			add_ideas = POL_pgr
+		}
+	}
+	focus = {
+		id = POL_nowy_lepszy_prl
+		icon = GFX_focus_POL_nowy_lepszy_prl
+		x = 0
+		y = 6
+		relative_position_id = POL_opcja_lepper
+		cost = 10
+		prerequisite = {
+			focus = POL_odrodzenie_ursusa_i_pgrow
+			focus = POL_czy_sie_stoi
+			focus = POL_kto_wzial_lapowe
+		}
+		completion_reward = {
+			custom_effect_tooltip = POL_koniec_reform_leppera
+			country_event = { id = poland.30 }
+		}
+	}
+	focus = {
+		id = POL_czy_sie_stoi
+		icon = GFX_focus_POL_czy_sie_stoi
+		x = 0
+		y = 5
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		prerequisite = {
+			focus = POL_nie_ufajmy_ue
+		}
+		completion_reward = {
+			add_ideas = POL_dwa_tysiace_sie_nalezy
+		}
+	}
+	focus = {
+		id = POL_kto_wzial_lapowe
+		icon = GFX_focus_POL_kto_wzial_lapowe
+		x = -2
+		y = 5
+		relative_position_id = POL_opcja_lepper
+		cost = 10
+		prerequisite = {
+			focus = POL_nie_ufajmy_ue
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}	
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.05
+			}
+		}
+	}
+	focus = {
+		id = POL_finansowanie_traktorow
+		icon = GFX_SOV_transformation_of_nature_ccp_2d_sov_compatibility
+		x = 0
+		y = 7
+		relative_position_id = POL_opcja_lepper
+		cost = 10
+		prerequisite = {
+			focus = POL_kto_wzial_lapowe
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = motorized
+				amount = 2500
+			}
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = POL_usunac_balcerowicza
+		icon = GFX_focus_POL_usunac_balcerowicza
+		x = 2
+		y = 7
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		prerequisite = {
+			focus = POL_nowy_lepszy_prl
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = -100
+			retire_character = POL_leszek_balcerowicz
+			remove_ideas = POL_wrogowie_wewnetrzni
+		}
+	}
+	focus = {
+		id = POL_zdelegalizujmy_neoliberalizm
+		icon = GFX_focus_POL_zdelegalizujmy_neoliberalizm
+		x = 2
+		y = 8
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		prerequisite = {
+			focus = POL_usunac_balcerowicza
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = -1
+			}
+		}
+	}
+	focus = {
+		id = POL_dorodne_zniwa
+		icon = GFX_focus_POL_dorodne_zniwa
+		x = 0
+		y = 8
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		prerequisite = {
+			focus = POL_finansowanie_traktorow 
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.10
+			}
+		    add_ideas = POL_reforma_rolna_spirit
+		}
+	}
+	focus = {
+		id = POL_rozwoj_wsi
+		icon = GFX_SOV_paced_industrialization_ccp_2d_sov_compatibility
+		x = -2
+		y = 9
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		prerequisite = {
+			focus = POL_dorodne_zniwa
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POL_reforma_rolna_spirit
+				add_idea = POL_agrarian_gold_age
+			}
+		}
+	}
+	focus = {
+		id = POL_komunizm_z_ludzka_twarza
+		icon = GFX_focus_POL_komunizm_z_ludzka_twarza
+		x = 0
+		y = 9
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		prerequisite = {
+			focus = POL_dorodne_zniwa
+			focus = POL_zdelegalizujmy_neoliberalizm
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_political_power = 200
+			every_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = POL_wsparcie_rolnikow
+		icon = GFX_focus_SOV_breadbasket_of_the_union
+		x = 2
+		y = 9
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		prerequisite = {
+			focus = POL_dorodne_zniwa
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = POL_zaoranie_korwinistow
+		icon = GFX_focus_POL_zaoranie_korwinistow
+		x = -1
+		y = 10
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		prerequisite = {
+			focus = POL_komunizm_z_ludzka_twarza
+			focus = POL_rozwoj_wsi
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.15
+			}
+			swap_ideas = {
+				remove_idea = POL_popis_delegalized
+				add_idea = POL_majority_tyrrany
+			}
+		}
+	}
+	focus = {
+		id = POL_kolaboracja_ze_stonoga
+		icon = GFX_goal_generic_national_unity
+		x = 1
+		y = 10
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		offset = {
+			y = -1
+			trigger = {
+				has_completed_focus = POL_opcja_lepper
+			}
+		}
+		prerequisite = {
+			focus = POL_komunizm_z_ludzka_twarza
+			focus = POL_wsparcie_rolnikow
+		}
+		completion_reward = {
+			show_unit_leaders_tooltip = POL_zbigniew_stonoga
+			promote_character = POL_zbigniew_stonoga
+		}
+	}	
+	focus = {
+		id = POL_mlodziez_wszechpolska_focus
+		icon = GFX_focus_generic_fascist_propaganda
+		cost = 5
+		x = 0
+		y = 11
+		relative_position_id = POL_opcja_lepper
+		offset = {
+			y = -2
+			trigger = {
+				has_completed_focus = POL_opcja_lepper
+			}
+		}
+		prerequisite = {
+			focus = POL_kolaboracja_ze_stonoga
+		}
+		prerequisite = {
+			focus = POL_zaoranie_korwinistow
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+			add_war_support = 0.15
+		}
+	}
+	focus = {
+		id = POL_wykorzystanie_LPR
+		icon = GFX_focus_POL_dopasc_giertycha
+		x = 0
+		y = 12
+		relative_position_id = POL_opcja_lepper
+		cost = 5
+		offset = {
+			y = -3
+			trigger = {
+				has_completed_focus = POL_opcja_lepper
+			}
+		}
+		prerequisite = {
+			focus = POL_mlodziez_wszechpolska_focus
+		}
+		completion_reward = {
+			# roman giertych na generala
+		}
+	}	
+
+	
+
+
+
+
+
+
+
+
+
+	focus = {
+		id = POL_opcja_pis
+		icon = GFX_focus_POL_opcja_pis
+		x = -10
+		y = 1
+		relative_position_id = POL_opcja_prawica
+		cost = 5
+		allow_branch = {
+			pis_is_avaliable = yes
+		}
+		prerequisite = {
+			focus = POL_opcja_prawica
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_lepper
+			focus = POL_opcja_konfa
+			focus = POL_opcja_kamraci
+			focus = POL_opcja_kukiz
+			focus = POL_opcja_zero
+		}
+		offset = {
+			x = 10
+			trigger = {
+				has_completed_focus = POL_opcja_pis
+			}
+		}
+		completion_reward = {
+			set_party_name = {
+				ideology = democratic
+				long_name = PiS_LONG
+				name = PiS_SHORT
+			}
+			set_cosmetic_tag = POL_kaczism
+			remove_ideas = POL_sejmersi
+
+			custom_effect_tooltip = POL_nowi_generalowie_doradcy
+			hidden_effect = {
+				news_event = { id = PLREW_world_news.2 }
+				mark_focus_tree_layout_dirty = yes
+
+				promote_character = POL_andrzej_lepper
+				promote_character = POL_janusz_korwin_mikke
+				promote_character = POL_wojciech_olszanski
+				set_party_name = {
+					ideology = communism
+					long_name = SAMOOBRONA_LONG
+					name = SAMOOBRONA_SHORT
+				}
+				set_party_name = {
+					ideology = neutrality
+					long_name = KON_LONG
+					name = KON_SHORT
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = KAMRACI_LONG
+					name = KAMRACI_SHORT
+				}
+
+				
+			}
+
+		}
+	}
+	focus = {
+		id = POL_opcja_kaczynski
+		icon = GFX_focus_POL_opcja_kaczynski
+		x = 0
+		y = 1
+		relative_position_id = POL_opcja_pis
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_pis
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_ziobro
+			focus = POL_opcja_rada_liderow
+			focus = POL_opcja_morawiecki
+			focus = POL_opcja_kowalski
+			focus = POL_opcja_macierewicz
+		}
+		completion_reward = {
+			promote_character = POL_jaroslaw_kaczynski
+			add_stability = 0.2
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.15
+			}
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+	focus = {
+		id = POL_opcja_ziobro
+		icon = GFX_focus_POL_opcja_ziobro
+		x = -2
+		y = 1
+		relative_position_id = POL_opcja_pis
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_pis
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_kaczynski
+			focus = POL_opcja_macierewicz
+			focus = POL_opcja_morawiecki
+			focus = POL_opcja_kowalski
+			focus = POL_opcja_rada_liderow
+		}
+		completion_reward = {
+			promote_character = POL_zbigniew_ziobro
+			add_stability = 0
+			add_popularity = {
+				ideology = democratic
+				popularity = 0
+			}
+		}
+	}
+	focus = {
+		id = POL_opcja_kowalski
+		icon = GFX_focus_POL_opcja_kowalski
+		x = -4
+		y = 1
+		relative_position_id = POL_opcja_pis
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_pis
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_kaczynski
+			focus = POL_opcja_ziobro
+			focus = POL_opcja_macierewicz
+			focus = POL_opcja_morawiecki
+			focus = POL_opcja_rada_liderow
+		}
+		completion_reward = {
+			promote_character = POL_janusz_kowalski
+			add_stability = 0.05
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+
+		}
+	}
+	focus = {
+		id = POL_opcja_morawiecki
+		icon = GFX_focus_POL_opcja_morawiecki
+		x = 2
+		y = 1
+		relative_position_id = POL_opcja_pis
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_pis
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_kaczynski
+			focus = POL_opcja_ziobro
+			focus = POL_opcja_kowalski
+			focus = POL_opcja_rada_liderow
+			focus = POL_opcja_macierewicz
+		}
+		completion_reward = {
+			promote_character = POL_mateusz_morawiecki
+			add_stability = 0.1
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = POL_opcja_rada_liderow
+		icon = GFX_focus_POL_opcja_rada_liderow
+		x = 4
+		y = 1
+		relative_position_id = POL_opcja_pis
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_pis
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_kaczynski
+			focus = POL_opcja_kowalski
+			focus = POL_opcja_macierewicz
+			focus = POL_opcja_morawiecki
+			focus = POL_opcja_ziobro
+		}
+		completion_reward = {
+			promote_character = POL_rada_liderow_pis
+			add_stability = 0.2
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = POL_etatyzm
+		icon = GFX_focus_POL_etatyzm
+		x = 0
+		y = 2
+		relative_position_id = POL_opcja_pis
+		cost = 5.72
+		prerequisite = {
+			focus = POL_opcja_kaczynski
+			focus = POL_opcja_ziobro
+			focus = POL_opcja_kowalski
+			focus = POL_opcja_morawiecki
+			focus = POL_opcja_rada_liderow
+		}
+		completion_reward = {
+			add_ideas = POL_etatyzm_spirit
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			custom_effect_tooltip = POL_nowy_doradca
+			show_ideas_tooltip = POL_john_maynard_keynes
+		}
+	}
+	focus = {
+		id = POL_reforma_rolna_goal
+		icon = GFX_focus_POL_reforma_rolna_goal
+		x = -2
+		y = 2
+		relative_position_id = POL_opcja_pis
+		cost = 5.72
+		prerequisite = {
+			focus = POL_opcja_kaczynski
+			focus = POL_opcja_ziobro
+			focus = POL_opcja_kowalski
+			focus = POL_opcja_morawiecki
+			focus = POL_opcja_rada_liderow
+		}
+		completion_reward = {
+		    add_ideas = POL_reforma_rolna_spirit
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = POL_reforma_sprawiedliwosci
+		icon = GFX_focus_POL_reforma_sprawiedliwosci
+		x = 2
+		y = 2
+		relative_position_id = POL_opcja_pis
+		cost = 5.72
+		prerequisite = {
+			focus = POL_opcja_kaczynski
+			focus = POL_opcja_ziobro
+			focus = POL_opcja_kowalski
+			focus = POL_opcja_morawiecki
+			focus = POL_opcja_rada_liderow
+		}
+		completion_reward = {
+			add_political_power = 50
+			swap_ideas = {
+				remove_idea = POL_broken_justice_system
+				add_idea = POL_corrupt_justice_system
+			}
+			custom_effect_tooltip = POL_nowy_doradca
+			show_ideas_tooltip = POL_zbigniew_ziobro
+		}
+	}
+	
+	focus = {
+		id = POL_odrzucenie_ase
+		icon = GFX_focus_POL_odrzucenie_ase
+		x = 0
+		y = 3
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_etatyzm
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = -1
+			}
+			swap_ideas = {
+				remove_idea = POL_etatyzm_spirit
+				add_idea = POL_etatyzm_spirit_2
+			}
+			add_building_construction = {
+				type = industrial_complex 
+				level = 3
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = POL_trybunal_przylebskiej
+		icon = GFX_focus_POL_trybunal_przylebskiej
+		x = 2
+		y = 3
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_reforma_sprawiedliwosci
+			
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.15
+			}
+			add_ideas = POL_trybunal_niekonstytucyjny
+		}
+	}
+	focus = {
+		id = POL_ban_TVN
+		icon = GFX_focus_POL_ban_tvn
+		x = 2
+		y = 4
+		relative_position_id = POL_opcja_pis
+		cost = 5.72
+		prerequisite = {
+			focus = POL_trybunal_przylebskiej
+		}
+		completion_reward = {
+			add_stability = -0.15
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.10
+			}
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = POL_tvpis
+		icon = GFX_focus_POL_tvpis
+		x = 2
+		y = 5
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_ban_TVN	
+		}
+		completion_reward = {
+			add_ideas = POL_TVPiS
+			show_unit_leaders_tooltip = POL_michal_rachon
+			show_unit_leaders_tooltip = POL_adrian_klarenbach
+		}
+	}
+
+	focus = {
+		id = POL_delegalizacja_opozycji
+		icon = GFX_focus_POL_delegalizacja_opozycji
+		x = 2
+		y = 6
+		relative_position_id = POL_opcja_pis
+		cost = 5.72
+		prerequisite = {
+			focus = POL_tvpis	
+		}
+		completion_reward = {
+			add_ideas = POL_katotaliban
+			country_event = { id = poland.33 }
+		}
+	}
+	focus = {
+		id = POL_los_porozumienia_centrum
+		icon = GFX_focus_POL_los_porozumienia_centrum
+		x = 2
+		y = 7
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_delegalizacja_opozycji	
+		}
+		completion_reward = {
+			country_event = { id = poland.34 }
+			# event z generalami (podmiana rachonia i klarenbacha na kurskiego, mozliwosc taka)
+		}
+	}
+	focus = {
+		id = POL_emerytura_w_szwecji
+		icon = GFX_focus_generic_befriend_sweden
+		x = 2
+		y = 1
+		relative_position_id = POL_los_porozumienia_centrum
+		available = {
+			always = no
+		}
+		prerequisite = {
+			focus = POL_los_porozumienia_centrum
+		}
+		completion_reward = {
+			custom_effect_tooltip = POL_emeryturki_szwecja
+			ROOT = {
+				add_state_core = 124
+				set_state_owner = 124
+				set_state_controller = 124
+			}
+		}
+	}
+	focus = {
+		id = POL_radio_maryja
+		icon = GFX_focus_POL_radio_maryja
+		x = -2
+		y = 3
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_reforma_rolna_goal
+		}
+		completion_reward = {	
+			country_event = { id = poland.32 }
+		}#event dajacy mozliwosc rydzyka na generala
+	}
+	focus = {
+		id = POL_sila_beretu
+		icon = GFX_focus_POL_sila_beretu
+		x = -2
+		y = 4
+		relative_position_id = POL_opcja_pis
+		cost = 5.72
+		prerequisite = {
+			focus = POL_radio_maryja
+		}
+		completion_reward = {
+			army_experience = 50
+			add_command_power = 10
+		}#utworzenie nowej dywizji i 10 jednostek z niej
+	}
+	focus = {
+		id = POL_500plus_focus
+		icon = GFX_focus_POL_500plus
+		x = 0
+		y = 4
+		relative_position_id = POL_opcja_pis
+		cost = 5.72
+		prerequisite = {
+			focus = POL_odrzucenie_ase
+		}
+		completion_reward = {
+			add_ideas = POL_500plus
+		}
+	}
+	focus = {
+		id = POL_800plus_focus
+		icon = GFX_focus_POL_800plus
+		x = 0
+		y = 5
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_500plus_focus	
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POL_500plus
+				add_idea = POL_800plus
+			}
+		}
+	}
+	focus = {
+		id = POL_1000plus_focus # Marks się przewraca w grobie
+		icon = GFX_focus_POL_1000plus
+		x = 0
+		y = 6
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_800plus_focus	
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POL_800plus
+				add_idea = POL_1000plus
+			}
+		}
+	}
+	focus = {
+		id = POL_stalinflacja
+		icon = GFX_focus_POL_stalinflacja
+		x = 0
+		y = 7
+		relative_position_id = POL_opcja_pis
+		cost = 5.72
+		prerequisite = {
+			focus = POL_1000plus_focus	
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POL_1000plus
+				add_idea = POL_1000plus_reforma
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = POL_manipulacja_cenami_paliw
+		icon = GFX_focus_POL_manipulacja_cenami_paliw
+		x = 0
+		y = 8
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_stalinflacja
+		}
+		completion_reward = { # Obajtek NIE zostaje generałem 😭🙏
+			custom_effect_tooltip = POL_nowy_doradca
+			show_ideas_tooltip = POL_daniel_obajtek
+		}
+	}
+	
+	focus = {
+		id = POL_dopasc_giertycha
+		icon = GFX_focus_POL_dopasc_giertycha
+		x = -2
+		y = 6
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_karol_nawrocki_prezydentem_polski
+		}
+		completion_reward = {
+			add_political_power = 50
+			remove_ideas = POL_wrogowie_wewnetrzni
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+		}# dodaj event z giertychem i jego smiercia, pogorsz relacje z wlochami
+	}
+	focus = {
+		id = POL_popularnosc_wsrod_rolnikow
+		icon = GFX_focus_POL_popularnosc_wsrod_rolnikow
+		x = -2
+		y = 7
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_dopasc_giertycha
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POL_reforma_rolna_spirit
+				add_idea = POL_agrarian_gold_age
+			}
+		}
+	}
+	focus = {
+		id = POL_dziedzictwo_olszewskiego
+		icon = GFX_focus_POL_dziedzictwo_olszewskiego
+		x = -2
+		y = 8
+		relative_position_id = POL_opcja_pis
+		cost = 5.72
+		prerequisite = {
+			focus = POL_popularnosc_wsrod_rolnikow
+		}
+		completion_reward = {
+			add_stability = 0.2
+			custom_effect_tooltip = POL_nigdy_wiecej_rozszczen
+			hidden_effect = {
+				94 = { remove_core_of = BLR }
+				95 = { remove_core_of = BLR }
+				96 = { remove_core_of = BLR }
+				97 = { remove_core_of = BLR }
+
+				89 = { remove_core_of = UKR }
+				91 = { remove_core_of = UKR }
+				93 = { remove_core_of = UKR }
+
+				807 = { remove_core_of = KSH }
+				85 = { remove_core_of = KSH }
+
+				85 = { remove_claim_by = PRE }
+				807 = { remove_claim_by = PRE }
+				86 = { remove_claim_by = PRE }
+				762 = { remove_claim_by = PRE }
+
+				85 = { remove_core_of = DNZ }
+				762 = { remove_core_of = SIL }
+				784 = { remove_core_of = LIT }
+			}
+
+		}
+	}
+	focus = {
+		id = POL_kaczka
+		icon = GFX_focus_POL_kaczka
+		x = -2
+		y = 9
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_dziedzictwo_olszewskiego	
+		}#dodaj firme produkującą wyp piechoty o nazwie kaczka
+	}
+	focus = {
+		id = POL_menel_europy
+		icon = GFX_focus_POL_menel_europy
+		x = 0
+		y = 9
+		relative_position_id = POL_opcja_pis
+		cost = 5.72
+		prerequisite = {
+			focus = POL_manipulacja_cenami_paliw	
+		}
+		completion_reward = {
+			remove_ideas = POL_european_pressure
+			add_timed_idea = {
+				idea = POL_menel_europy_spirit
+				days = 365
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.10
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}
+		}
+	}
+	focus = {
+		id = POL_minister_emilewicz
+		icon = GFX_focus_POL_minister_emilewicz
+		x = 2
+		y = 8
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_los_porozumienia_centrum
+		}
+		completion_reward = {
+			add_war_support = 0.3
+		}
+	}
+	focus = {
+		id = POL_polski_rolnik_polskie_pole
+		icon = GFX_focus_POL_polski_rolnik_polskie_pole
+		x = 2
+		y = 9
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_minister_emilewicz
+		}#polski chleb na polskim stole czyli spirit dajacy bonus na logistyke armii na 2 lata
+		completion_reward = {
+			add_timed_idea = {
+				idea = POL_polski_chleb
+				years = 2
+			}
+		}
+	}
+	focus = {
+		id = POL_karol_nawrocki_prezydentem_polski
+		icon = GFX_focus_POL_karol_nawrocki_prezydentem_polski
+		x = -2
+		y = 5
+		relative_position_id = POL_opcja_pis
+		cost = 2.86
+		prerequisite = {
+			focus = POL_sila_beretu
+		}#odblokuj go jako doradce, a jesli rzadzi kaczor to dodaj poparcie wojny
+		completion_reward = {
+			custom_effect_tooltip = POL_nowy_doradca
+			show_ideas_tooltip = POL_karol_nawrocki
+		}
+	}
+
+	focus = {
+		id = POL_rozwalenie_gospodarki
+		icon = GFX_focus_POL_rozwalenie_gospodarki
+		x = 0
+		y = 10
+		relative_position_id = POL_opcja_pis
+		cost = 1
+		prerequisite = {
+			focus = POL_menel_europy
+		}
+		prerequisite = {
+			focus = POL_polski_rolnik_polskie_pole
+		}
+		prerequisite = {
+			focus = POL_kaczka
+		}#usun wiekszosc pozytywnych modifierow z etatyzmu
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POL_etatyzm_spirit_2
+				add_idea = POL_etatyzm_spirit_3
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+	
+	
+	focus = {
+		id = POL_towarzysz_napoleon
+		icon = GFX_focus_POL_towarzysz_napoleon
+		x = -2
+		y = 11
+		relative_position_id = POL_opcja_pis
+		cost = 5.72
+		prerequisite = {
+			focus = POL_rozwalenie_gospodarki
+		}
+		completion_reward = {
+			if = {
+				limit = { 
+					ROOT = {
+						has_country_leader = {
+							character = POL_jaroslaw_kaczynski
+							ruling_only = yes
+						}
+					}
+				}
+
+				ROOT = {
+					swap_ruler_traits = {
+						remove = mod_kaczafi
+						add = mod_cesarz
+					}
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = POL_kaczafi_spirit
+					add_idea = POL_cesarz_spirit
+				}
+			}
+			custom_effect_tooltip = POL_kaczynski_napoleon_tooltip
+			
+			hidden_effect = { # VIVE LA EMPEREUR
+				add_state_core = 704
+				set_state_owner = 704
+				set_state_controller = 704
+				every_owned_state = {
+					limit = { state = 704 }
+					add_building_construction = {
+						type = infrastructure
+						level = 4
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = POL_drukowanie_pieniedzy
+		icon = GFX_focus_POL_drukowanie_pieniedzy
+		x = 0
+		y = 11
+		relative_position_id = POL_opcja_pis
+		cost = 5.72
+		offset = {
+			x = 0
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_pis
+			}
+		}
+		prerequisite = {
+			focus = POL_rozwalenie_gospodarki
+		}#zmiany w etatyzmie i wiecej fabryk juz finalnie
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = POL_zalozmy_kaczorowi_x
+		icon = GFX_focus_POL_zalozmy_kaczorowi_x
+		x = 2
+		y = 11
+		relative_position_id = POL_opcja_pis
+		cost = 5.72
+		offset = {
+			x = 0
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_pis
+			}
+		}
+		prerequisite = {
+			focus = POL_rozwalenie_gospodarki
+		}
+		completion_reward = {
+			add_stability = 0.1
+			show_unit_leaders_tooltip = POL_radoslaw_fogiel
+		}
+	}#daj jakis awans foglowi i dodaj stabilkę (ogolnie toma byc przez cala gre z nią slabo to ma ją naprawic)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	focus = {
+		id = POL_opcja_macierewicz
+		icon = GFX_focus_POL_opcja_macierewicz
+		x = 6
+		y = 1
+		relative_position_id = POL_opcja_pis
+		cost = 2.2
+		prerequisite = {
+			focus = POL_opcja_pis
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_kaczynski
+			focus = POL_opcja_kowalski
+			focus = POL_opcja_morawiecki
+			focus = POL_opcja_rada_liderow
+			focus = POL_opcja_ziobro
+		}
+		offset = {
+			x = 2
+			trigger = {
+				has_completed_focus = POL_opcja_macierewicz
+			}
+		}
+		completion_reward = {
+			create_country_leader = {
+				name = "Antoni Macierewicz"
+				# picture = GFX_portrait_Edward_VIII
+				expire = "1965.1.1"
+				ideology = kaczism
+				traits = {}
+			}
+			custom_effect_tooltip = POL_nowy_doradca
+			promote_character = POL_bartlomiej_misiewicz
+
+			hidden_effect = {
+			mark_focus_tree_layout_dirty = yes
+				set_party_name = {
+					ideology = democratic
+					long_name = SMOLENSK_LONG
+					name = SMOLENSK_SHORT
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = POL_antoni_wzywa_do_broni
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		relative_position_id = POL_opcja_macierewicz
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_macierewicz
+		}
+		allow_branch = {
+			has_completed_focus = POL_opcja_macierewicz
+		}
+		completion_reward = {
+			set_conscription = {
+				conscription = conscription_all_adults_serve
+			}
+			add_political_power = 200
+			add_stability = 0.05
+			85 = {
+				set_state_owner = POL
+				add_state_core = POL
+			}
+			807 = {
+				set_state_owner = POL
+				add_state_core = POL
+			}
+			add_opinion_modifier = {
+				target = GER
+				modifier = negative_50_opinion
+			}
+			add_opinion_modifier = {
+				target = SOV
+				modifier = negative_50_opinion
+			}
+		}
+	}
+
+	focus = {
+		id = POL_antoni_ojczyzne_obroni
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_antoni_wzywa_do_broni
+		} 
+		#dodaj event z przemowieniem w tvp, spirit armia antkowego wzoru
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+
+	focus = {
+		id = POL_kto_w_lodowce_trzyma_nowa
+		icon = GFX_goal_unknown
+		x = -2
+		y = 2
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_antoni_ojczyzne_obroni
+		}
+		completion_reward = {
+			set_political_power = 100
+			set_technology = { atomic_research = 1 }
+        	set_technology = { nuclear_reactor = 1 }
+        	set_technology = { nukes = 1 }
+        	set_technology = { rocket_engines = 1 }
+        	set_technology = { rocket_interceptor_1 = 1 }
+        	set_technology = { rocket_interceptor_2 = 1 }
+        	set_technology = { rocket_interceptor_3 = 1 }
+        	set_technology = { rocket_artillery2 = 1 }
+        	set_technology = { rocket_artillery3 = 1 }
+		}
+	}
+
+	focus = {
+		id = POL_bombe_z_klockow_atomowa
+		icon = GFX_goal_unknown
+		x = -2
+		y = 3
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_kto_w_lodowce_trzyma_nowa
+		}
+		completion_reward = {
+			85 = { add_building_construction = { type = nuclear_reactor level = 1 instant_build = yes } }
+        	86 = { add_building_construction = { type = nuclear_reactor level = 1 instant_build = yes } }
+        	88 = { add_building_construction = { type = nuclear_reactor level = 1 instant_build = yes } }
+        	89 = { add_building_construction = { type = nuclear_reactor level = 1 instant_build = yes } }
+        	90 = { add_building_construction = { type = nuclear_reactor level = 1 instant_build = yes } }
+        	91 = { add_building_construction = { type = nuclear_reactor level = 1 instant_build = yes } }
+        	92 = { add_building_construction = { type = nuclear_reactor level = 1 instant_build = yes } }
+        	93 = { add_building_construction = { type = nuclear_reactor level = 1 instant_build = yes } }
+        	94 = { add_building_construction = { type = nuclear_reactor level = 1 instant_build = yes } }
+        	95 = { add_building_construction = { type = nuclear_reactor level = 1 instant_build = yes } }
+        	96 = { add_building_construction = { type = nuclear_reactor level = 1 instant_build = yes } }
+        	97 = { add_building_construction = { type = nuclear_reactor level = 1 instant_build = yes } }
+			add_nuclear_bombs = 5
+		}
+	}
+
+	focus = {
+		id = POL_kto_doradcow_ma_z_przedszkola 
+		#Dodaj adwisorów S. Mentzen, K. Bosak, Patryk Jaki, Bartłomiej Misiewicz
+		icon = GFX_goal_unknown
+		x = 0
+		y = 2
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_antoni_ojczyzne_obroni
+		}
+	}
+
+	focus = {
+		id = POL_kogo_prezes_antos_wola
+		icon = GFX_goal_unknown
+		x = 0
+		y = 3
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_kto_doradcow_ma_z_przedszkola
+		}
+		completion_reward = {
+		
+			set_technology = { early_ship_hull_cruiser = 1 }
+			set_technology = { basic_ship_hull_submarine = 1 }
+			set_technology = { basic_light_carrier = 1 }
+			set_technology = { early_ship_hull_heavy = 1 }
+			set_technology = { basic_ship_hull_heavy = 1 }
+
+			add_equipment_to_stockpile = {
+				type = convoy_1
+				amount = 200
+			}
+
+			85 = {
+				add_building_slots = 10
+				add_building_construction = {
+					type = dockyard
+					level = 10
+            		instant_build = yes
+        		}
+    		}
+			807 = {
+				add_building_slots = 10
+				add_building_construction = {
+					type = dockyard
+					level = 10
+            		instant_build = yes
+        		}
+    		}
+
+			create_equipment_variant = {
+					name = "Antoś Respirator"				
+					type = ship_hull_heavy_2
+					modules = {
+						fixed_ship_battery_slot = ship_heavy_battery_3
+						fixed_ship_anti_air_slot = ship_anti_air_1
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_radar_slot = ship_radar_1
+						fixed_ship_engine_slot = heavy_ship_engine_2
+						fixed_ship_secondaries_slot = ship_secondaries_1
+						fixed_ship_armor_slot = ship_armor_bb_2
+						front_1_custom_slot = ship_anti_air_1
+						mid_1_custom_slot = ship_airplane_launcher_1
+						mid_2_custom_slot = ship_secondaries_1
+						rear_1_custom_slot = ship_heavy_battery_3
+					}
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_heavy_2
+						version_name = "Antoś Respirator"
+						producer = POL
+					}
+					name = "Antoś Respirator"
+					requested_factories = 1
+					progress = 0.20
+					amount = 3
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_heavy_2
+						version_name = "Antoś Respirator"
+						producer = POL
+					}
+					name = "Antoś Respirator"
+					requested_factories = 1
+					progress = 0.20
+					amount = 2
+				}
+		}
+	}
+
+	focus = {
+		id = POL_rozliczenie_opozycji
+		icon = GFX_goal_unknown
+		x = 0
+		y = 4
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_kogo_prezes_antos_wola
+		}
+		prerequisite = {
+			focus = POL_kto_na_pomoc_marsjan_wzywa
+		}
+		prerequisite = {
+			focus = POL_bombe_z_klockow_atomowa
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+		}
+	}
+
+	focus = {
+		id = POL_kto_oczy_ma_taliba
+		icon = GFX_goal_unknown
+		x = 2
+		y = 2
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_antoni_ojczyzne_obroni
+		}
+		completion_reward = {
+			air_experience = 50
+			random_owned_controlled_state = {
+				prioritize = { 10 }
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 1
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = POL_air_base_expansion_1
+			}
+		}
+	}
+
+	focus = {
+		id = POL_kto_na_pomoc_marsjan_wzywa
+		icon = GFX_goal_unknown
+		x = 2
+		y = 3
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_kto_oczy_ma_taliba
+		}
+		completion_reward = { 
+			division_template = {      
+			name = "Zielone Ludziki"
+				priority = 1
+				division_names_group = POL_INF_01
+				regiments = {
+					
+            	infantry = { x = 0 y = 0 }
+            	infantry = { x = 1 y = 0 }
+            	infantry = { x = 2 y = 0 }
+            	infantry = { x = 0 y = 1 }
+            	infantry = { x = 1 y = 1 }
+            	infantry = { x = 2 y = 1 }
+            	infantry = { x = 0 y = 2 }
+            	infantry = { x = 1 y = 2 }
+            	infantry = { x = 2 y = 2 }
+            	artillery = { x = 0 y = 3 }
+            	artillery = { x = 1 y = 3 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 10 }
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Zielone Ludziki\" division_template = \"Zielone Ludziki\" start_experience_factor = 0.9" 
+					owner = POL
+				}
+			}	
+		}
+	}
+
+	focus = {
+		id = POL_kto_obrabia_biura_nato
+		icon = GFX_goal_unknown
+		x = -2
+		y = 5
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_rozliczenie_opozycji
+		}
+		completion_reward = {
+			set_technology = { basic_medium_tank_chassis = 1 }
+			set_technology = { improved_medium_tank_chassis = 1 }
+			set_technology = { advanced_medium_tank_chassis = 1 }
+			
+			add_opinion_modifier = {
+				target = USA
+				modifier = negative_75_opinion
+			}
+		}
+	}
+
+	focus = {
+		id = POL_komu_wszystko_pachnie_zdrada
+		#macierewicz dostanie ceche paranoi
+		icon = GFX_goal_unknown
+		x = -2
+		y = 8
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_kto_obrabia_biura_nato
+		}
+	}
+
+	focus = {
+		id = POL_kto_w_smolensku_tropil_brzoze
+		icon = GFX_goal_unknown
+		x = 0
+		y = 5
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_rozliczenie_opozycji
+		}
+		completion_reward = {
+			add_stability = -0.10
+			#dodaj duchabrzozowy zawrot glowy
+		}
+	}
+
+	focus = {
+		id = POL_sledztwa_twardy_zgryzal_orzech
+		icon = GFX_goal_unknown
+		x = 0
+		y = 6
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_kto_w_smolensku_tropil_brzoze
+		}
+		completion_reward = {
+			remove_ideas = POL_wrogowie_wewnetrzni
+			remove_ideas = POL_rozwalone_sadownictwo
+			10 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			97 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			94 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			92 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			95 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			96 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = POL_kto_doradcow_wybral_z_cyrku
+		icon = GFX_goal_unknown
+		x = 0
+		y = 7
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_sledztwa_twardy_zgryzal_orzech
+		} #general klaun z koszalina seba narodowy i szur szurski
+	}
+
+	focus = {
+		id = POL_hipotez_mial_bez_liku
+		icon = GFX_goal_unknown
+		x = 0
+		y = 8
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_kto_doradcow_wybral_z_cyrku
+		} #2 razy 100 bonus do elektroniki
+	}
+
+	focus = {
+		id = POL_kto_w_gasnicach_znalazl_bombe
+		icon = GFX_goal_unknown
+		x = 2
+		y = 5
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_rozliczenie_opozycji
+		} #doradca braun
+	}
+
+	focus = {
+		id = POL_mgle_rozpuscil_wodociagiem
+		icon = GFX_goal_unknown
+		x = 2
+		y = 6
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_kto_w_gasnicach_znalazl_bombe
+		} #4 razy 100 bonus do przetworstwa ropy
+	}
+
+	focus = {
+		id = POL_kto_opieral_sie_na_znawcach
+		icon = GFX_goal_unknown
+		x = 2
+		y = 7
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_mgle_rozpuscil_wodociagiem
+		} 
+	}
+
+	focus = {
+		id = POL_co_sie_znali_na_latawcach
+		icon = GFX_goal_unknown
+		x = 2
+		y = 8
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_kto_opieral_sie_na_znawcach
+		}
+		completion_reward = {
+			#jednorazowo 500 procent do lotnictwa
+			air_experience = 100
+		}
+	}
+
+	focus = {
+		id = POL_big_cyc_focus
+		icon = GFX_goal_unknown
+		x = 0
+		y = 9
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_co_sie_znali_na_latawcach
+		}
+		prerequisite = {
+			focus = POL_hipotez_mial_bez_liku
+			
+		}
+		prerequisite = {
+			focus = POL_komu_wszystko_pachnie_zdrada
+		} #event macierewicz uderza w wolnosc slowa
+	}
+
+	focus = {
+		id = POL_macierewicz_ekspansja
+		icon = GFX_goal_unknown
+		x = 0
+		y = 10
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_big_cyc_focus
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = POL_infantry_equipment
+				amount = 20000
+			}
+			add_equipment_to_stockpile = {
+				type = POL_artillery
+				amount = 800
+			}
+			add_equipment_to_stockpile = {
+				type = POL_support_equipment
+				amount = 5000
+			}
+			add_war_support = 0.1
+		}
+	}
+
+	focus = {
+		id = POL_antek_z_calym_swiatem_walczy
+		icon = GFX_goal_unknown
+		x = -2
+		y = 11
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_macierewicz_ekspansja
+		}#dodaj spirit totalenkrieg i taki sam event, oraz pogorsz relacje z calym swiatem
+	}
+
+
+	focus = {
+		id = POL_juz_mu_rosja_nie_wystarczy
+		icon = GFX_goal_unknown
+		x = -2
+		y = 12
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_antek_z_calym_swiatem_walczy
+		}
+		completion_reward = {
+				814 = { add_core_of = POL }
+				189 = { add_core_of = POL }
+				11 = { add_core_of = POL }
+				815 = { add_core_of = POL }
+				784 = { add_core_of = POL }
+				190 = { add_core_of = POL }
+				809 = { add_core_of = POL }
+				810 = { add_core_of = POL }
+				808 = { add_core_of = POL }
+				12 = { add_core_of = POL }
+				13 = { add_core_of = POL }
+				191 = { add_core_of = POL }
+				813 = { add_core_of = POL }
+				812 = { add_core_of = POL }
+				811 = { add_core_of = POL }
+				207 = { add_core_of = POL }
+				206 = { add_core_of = POL }
+				204 = { add_core_of = POL }
+				194 = { add_core_of = POL }
+				201 = { add_core_of = POL }
+				199 = { add_core_of = POL }
+				198 = { add_core_of = POL }
+				202 = { add_core_of = POL }
+				193 = { add_core_of = POL }
+				203 = { add_core_of = POL }
+				259 = { add_core_of = POL }
+				241 = { add_core_of = POL }
+				242 = { add_core_of = POL }
+				243 = { add_core_of = POL }
+			create_wargoal = {
+				target = LAT
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = LIT
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = EST
+				type = annex_everything
+			}
+				create_wargoal = {
+				type = take_state_focus
+				target = SOV
+				generator = {
+					 207 206 204 194 201 199 198 202 193 203 259 241 242 243
+					 }
+			}
+		}
+	}
+	
+	focus = {
+		id = POL_on_napadnie_dzis_na_szwecje
+		icon = GFX_goal_unknown
+		x = 0
+		y = 11
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_macierewicz_ekspansja
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = DEN
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = SWE
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = NOR
+				type = annex_everything
+			} #odblokowanie decyzji o zawiazaniu skandynawskiej unii narodowej
+		}
+	}
+
+	focus = {
+		id = POL_zlupi_madryt
+		icon = GFX_goal_unknown
+		x = 0
+		y = 12
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_on_napadnie_dzis_na_szwecje
+		}
+		completion_reward = {
+			#ultimatum dla hiszpanii o zostanie marioneetka
+		}
+	}
+
+	focus = {
+		id = POL_kopnie_grecje
+		icon = GFX_goal_unknown
+		x = 0
+		y = 13
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_zlupi_madryt
+		}# ultimatum dla grecji o zostanie marioneetka
+	}
+
+	focus = {
+		id = POL_zrobi_przewrot_w_ameryce
+		icon = GFX_goal_unknown
+		x = 2
+		y = 11
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_macierewicz_ekspansja
+		}#wojna domowa w ameryce, trump dostaje ziemie w jakich wygral w ostatnich wyborach, a druga strona zaczyna rzadzic biden
+	}
+
+	focus = {
+		id = POL_pieklo_czystek_w_kostaryce
+		icon = GFX_goal_unknown
+		x = 2
+		y = 12
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_zrobi_przewrot_w_ameryce
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = COS
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+
+	focus = {
+		id = POL_pan_bog_powie_w_niebie
+		icon = GFX_goal_unknown
+		x = 0
+		y = 14
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_pieklo_czystek_w_kostaryce
+		}
+		prerequisite = {
+			focus = POL_kopnie_grecje
+		}
+		prerequisite = {
+			focus = POL_juz_mu_rosja_nie_wystarczy
+		}
+	}
+
+	focus = {
+		id = POL_napadnij_sam_na_siebie
+		icon = GFX_goal_unknown
+		x = 0
+		y = 15
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_pan_bog_powie_w_niebie
+		}
+	}
+
+	focus = {
+		id = POL_wielkie_imperium_smolenskie
+		icon = GFX_goal_unknown
+		x = 0
+		y = 16
+		relative_position_id = POL_antoni_wzywa_do_broni
+		cost = 5
+		prerequisite = {
+			focus = POL_napadnij_sam_na_siebie
+		}
+		
+	}
+
+
+	#drzewko podboju etatystow
+
+	focus = {
+		id = POL_pomniki_Keynesa
+		icon = GFX_focus_por_workers_of_iberia
+		x = 0
+		y = 16
+		relative_position_id = POL_opcja_prawica
+		cost = 5
+
+		#tu daj by pojawialo sie tylko po wyborze watazkow pisu, leppera lub POL_ujarzmeienie_aspergika
+		allow_branch = {
+			OR = {
+				has_completed_focus = POL_opcja_lepper
+
+				has_completed_focus = POL_opcja_kowalski
+				has_completed_focus = POL_opcja_ziobro
+				has_completed_focus = POL_opcja_kaczynski
+				has_completed_focus = POL_opcja_morawiecki
+				has_completed_focus = POL_opcja_rada_liderow
+
+				has_completed_focus = POL_ujarzmienie_aspergika
+			}
+		}
+		offset = {
+			x = 12
+			y = -15
+			trigger = {
+					has_completed_focus = POL_opcja_lepper
+			}
+		}
+	}
+	
+	focus = {
+		id = POL_ograniczenie_praw_kobiet
+		icon = GFX_goal_unknown
+		x = 1
+		y = 1
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_pomniki_Keynesa
+		}
+	}
+
+	focus = {
+		id = POL_zawiazanie_iv_rp
+		icon = GFX_goal_unknown
+		x = -1
+		y = 1
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_pomniki_Keynesa
+		}
+	}
+
+	focus = {
+		id = POL_polityka_zemsty_historycznej
+		icon = GFX_goal_unknown
+		x = 0
+		y = 2
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_ograniczenie_praw_kobiet
+			focus = POL_zawiazanie_iv_rp
+		}
+	}
+
+	focus = {
+		id = POL_przywrocenie_wspolnoty
+		icon = GFX_goal_unknown
+		x = -3
+		y = 3
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_polityka_zemsty_historycznej
+		}
+	}
+
+	focus = {
+		id = POL_eksuhumacja_na_wolyniu
+		icon = GFX_goal_unknown
+		x = 0
+		y = 3
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_polityka_zemsty_historycznej
+		}
+	}
+
+	focus = {
+		id = POL_ruch_ochrony_granic #wojna graniczna na slasku
+		icon = GFX_goal_unknown
+		x = 3
+		y = 3
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_polityka_zemsty_historycznej
+		}
+	}
+
+	focus = {
+		id = POL_zajecie_inflant
+		icon = GFX_goal_unknown
+		x = -4
+		y = 4
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_przywrocenie_wspolnoty
+		}
+	}
+
+
+	focus = {
+		id = POL_marinis_baltici
+		icon = GFX_goal_unknown
+		x = -3
+		y = 5
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_zajecie_inflant
+		}
+		prerequisite = {
+			focus = POL_przywrocenie_wspolnoty
+		}
+	}
+
+
+	focus = {
+		id = POL_bornholmskie_ultimatum
+		icon = GFX_goal_unknown
+		x = -6
+		y = 6
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_marinis_baltici
+		}
+	}
+
+	focus = {
+		id = POL_zemsta_za_potop
+		icon = GFX_goal_unknown
+		x = -4
+		y = 6
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_marinis_baltici
+		}
+	}
+
+	focus = {
+		id = POL_zlamanie_finskiego_oporu
+		icon = GFX_goal_unknown
+		x = -2
+		y = 6
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_marinis_baltici
+		}
+	}
+
+	focus = {
+		id = POL_morze_wewnetrzne
+		icon = GFX_goal_unknown
+		x = -4
+		y = 7
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_bornholmskie_ultimatum
+		}
+		prerequisite = {
+			focus = POL_zemsta_za_potop
+		}
+		prerequisite = {
+			focus = POL_zlamanie_finskiego_oporu
+		}
+	}
+
+	focus = {
+		id = POL_polak_wegier_2_bratanki
+		icon = GFX_goal_unknown
+		x = -1
+		y = 4
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_eksuhumacja_na_wolyniu
+		}
+	}
+
+	focus = {
+		id = POL_drugie_referendum_slaskie
+		icon = GFX_goal_unknown
+		x = 2
+		y = 4
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_ruch_ochrony_granic
+		}
+	}
+
+	focus = {
+		id = POL_wojna_o_kapliczke
+		icon = GFX_goal_unknown
+		x = 1
+		y = 5
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_polak_wegier_2_bratanki
+			focus = POL_drugie_referendum_slaskie
+		}
+	}
+
+	focus = {
+		id = POL_powrot_rymanowskiego
+		icon = GFX_goal_unknown
+		x = 2
+		y = 6
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_wojna_o_kapliczke
+		}
+	}
+
+	focus = {
+		id = POL_polityka_balkanska
+		icon = GFX_goal_unknown
+		x = 0
+		y = 7
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_powrot_rymanowskiego
+		}
+	}
+
+	focus = {
+		id = POL_koniec_imperializmu
+		icon = GFX_goal_unknown
+		x = 4
+		y = 7
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_powrot_rymanowskiego
+		}
+	}
+
+	focus = {
+		id = POL_hospodarstwo_moldawskie
+		icon = GFX_goal_unknown
+		x = 0
+		y = 8
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_polityka_balkanska
+		}
+	}
+
+	focus = {
+		id = POL_sojusz_rumunski
+		icon = GFX_goal_unknown
+		x = 0
+		y = 9
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_hospodarstwo_moldawskie
+		}
+	}
+
+	focus = {
+		id = POL_zemsta_za_warne
+		icon = GFX_goal_unknown
+		x = -2
+		y = 9
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_hospodarstwo_moldawskie
+		}
+	}
+
+	focus = {
+		id = POL_odbicie_konstantynopolu
+		icon = GFX_goal_unknown
+		x = 2
+		y = 9
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_hospodarstwo_moldawskie
+		}
+	}
+
+	focus = {
+		id = POL_polaczenie_z_slowianami_balkanskimi
+		icon = GFX_goal_unknown
+		x = -2
+		y = 8
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_polityka_balkanska
+		}
+	}
+
+	focus = {
+		id = POL_nigdy_wiecej_rozbiorow
+		icon = GFX_goal_unknown
+		x = 5
+		y = 8
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_koniec_imperializmu
+		}
+	}
+
+	focus = {
+		id = POL_austryjak_wredna_zmija
+		icon = GFX_goal_unknown
+		x = 4
+		y = 9
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_nigdy_wiecej_rozbiorow
+		}
+	}
+	
+	focus = {
+		id = POL_hold_tuski
+		icon = GFX_goal_unknown
+		x = 6
+		y = 9
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_nigdy_wiecej_rozbiorow
+		}
+	}
+
+	focus = {
+		id = POL_iv_dymitriada
+		icon = GFX_goal_unknown
+		x = 8
+		y = 9
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_nigdy_wiecej_rozbiorow
+		}
+	}
+
+	focus = {
+		id = POL_ziemie_odzyskane
+		icon = GFX_goal_unknown
+		x = 5
+		y = 10
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_austryjak_wredna_zmija
+			focus = POL_hold_tuski
+		}
+	}
+
+	focus = {
+		id = POL_obalic_liberalny_interwencjonizm
+		icon = GFX_goal_unknown
+		x = 11
+		y = 8
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_koniec_imperializmu
+		}
+	}
+
+	focus = {
+		id = POL_koniec_szwajcarskiej_neutralnosci
+		icon = GFX_goal_unknown
+		x = 10
+		y = 9
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_obalic_liberalny_interwencjonizm
+		}
+		mutually_exclusive = {
+			focus = POL_nauka_ze_schlifena
+		}
+	}
+
+	focus = {
+		id = POL_nauka_ze_schlifena
+		icon = GFX_goal_unknown
+		x = 12
+		y = 9
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_obalic_liberalny_interwencjonizm
+		}
+		mutually_exclusive = {
+			focus = POL_koniec_szwajcarskiej_neutralnosci
+		}
+	}
+
+	focus = {
+		id = POL_ksiestwo_paryskie
+		icon = GFX_goal_unknown
+		x = 11
+		y = 10
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_nauka_ze_schlifena
+			focus = POL_koniec_szwajcarskiej_neutralnosci
+		}
+	}
+
+	focus = {
+		id = POL_uwiezic_lwa
+		icon = GFX_goal_unknown
+		x = 12
+		y = 11
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_ksiestwo_paryskie
+		}
+	}
+
+	focus = {
+		id = POL_prezydent_trump
+		icon = GFX_goal_unknown
+		x = 10
+		y = 11
+		relative_position_id = POL_pomniki_Keynesa
+		cost = 5
+		prerequisite = {
+			focus = POL_ksiestwo_paryskie
+		}
+	}
+
+
+	#Konfederacja Focus Tree
+
+	focus = {
+		id = POL_opcja_konfa
+		icon = GFX_focus_POL_opcja_konfa
+		x = 16
+		y = 1
+		relative_position_id = POL_opcja_prawica
+		cost = 5
+		allow_branch = {
+			konfederacja_is_avaliable = yes
+		}
+		prerequisite = {
+			focus = POL_opcja_prawica
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_lepper
+			focus = POL_opcja_pis
+			focus = POL_opcja_kamraci
+			focus = POL_opcja_kukiz
+			focus = POL_opcja_zero
+		}
+		offset = {
+			x = -16
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_konfa
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+	focus = {
+		id = POL_likwiacja_dochodowego
+		icon = GFX_focus_POL_likwiacja_dochodowego
+		x = -2
+		y = 1
+		relative_position_id = POL_opcja_konfa
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_konfa
+		}
+	}
+	focus = {
+		id = POL_stabilizacja_partii
+		icon = GFX_focus_POL_stabilizacja_partii
+		x = 0
+		y = 1
+		relative_position_id = POL_opcja_konfa
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_konfa
+		}
+	}
+	focus = {
+		id = POL_liberalizacja
+		icon = GFX_focus_POL_liberalizacja
+		x = 2
+		y = 1
+		relative_position_id = POL_opcja_konfa
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_konfa
+		}
+	}
+	focus = {
+		id = POL_mentzen_grilluje
+		icon = GFX_focus_POL_mentzen_grilluje
+		x = 2
+		y = 2
+		relative_position_id = POL_opcja_konfa
+		cost = 5
+		prerequisite = {
+			focus = POL_liberalizacja
+		}
+	}
+	focus = {
+		id = POL_bosak_i_mentzen
+		icon = GFX_focus_POL_bosak_i_mentzen
+		x = -2
+		y = 2
+		relative_position_id = POL_opcja_konfa
+		cost = 5
+		prerequisite = {
+			focus = POL_likwiacja_dochodowego
+		}
+	}
+	focus = {
+		id = POL_pierwszy_kongres_w_wolnej_polsce
+		icon = GFX_goal_unknown
+		x = 0
+		y = 3
+		relative_position_id = POL_opcja_konfa
+		cost = 5
+		prerequisite = {
+			focus = POL_stabilizacja_partii
+		}
+		prerequisite = {
+			focus = POL_bosak_i_mentzen
+		}
+		prerequisite = {
+			focus = POL_mentzen_grilluje
+		}
+	}
+
+
+
+
+	focus = {
+		id = POL_usuniecie_korwina
+		icon = GFX_goal_unknown
+		x = -16
+		y = 1
+		relative_position_id = POL_pierwszy_kongres_w_wolnej_polsce
+		cost = 5
+		allow_branch = {
+			konfederacja_is_avaliable = yes
+			NOT = {
+				OR = {
+					has_completed_focus = POL_koniec_cukru
+					has_completed_focus = POL_korwin_nadal_u_wladzy
+				}
+
+			}
+		}
+		prerequisite = {
+			focus = POL_pierwszy_kongres_w_wolnej_polsce
+		}
+		mutually_exclusive = {
+			focus = POL_koniec_cukru
+			focus = POL_korwin_nadal_u_wladzy
+		}
+		offset = {
+			x = 16
+			y = 0
+			trigger = {
+				has_completed_focus = POL_usuniecie_korwina
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+	focus = {
+		id = POL_wipleryzacja_partii
+		icon = GFX_goal_unknown
+		x = -2
+		y = 1
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_usuniecie_korwina
+		}
+	}
+	focus = {
+		id = POL_cukier_plus
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_usuniecie_korwina
+		}
+	}
+	focus = {
+		id = POL_debata_z_petru
+		icon = GFX_goal_unknown
+		x = 2
+		y = 1
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_usuniecie_korwina
+		}
+	}
+	focus = {
+		id = POL_pozbyc_sie_winnickiego
+		icon = GFX_goal_unknown
+		x = -1
+		y = 2
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_wipleryzacja_partii
+		}
+		prerequisite = {
+			focus = POL_cukier_plus
+		}
+	}
+	focus = {
+		id = POL_destabilizacja_kkp
+		icon = GFX_goal_unknown
+		x = 1
+		y = 2
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_debata_z_petru
+		}
+		prerequisite = {
+			focus = POL_cukier_plus
+		}
+	}
+	focus = {
+		id = POL_wasalizacja_bosaka
+		icon = GFX_goal_unknown
+		x = -1
+		y = 3
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_pozbyc_sie_winnickiego
+		}
+	}
+	focus = {
+		id = POL_hold_lenny_narodowcow
+		icon = GFX_goal_unknown
+		x = -1
+		y = 4
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_wasalizacja_bosaka
+		}
+	}
+	focus = {
+		id = POL_braun_do_brukseli
+		icon = GFX_goal_unknown
+		x = 1
+		y = 3
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_destabilizacja_kkp
+		}
+	}
+	focus = {
+		id = POL_pokonac_foliarzy
+		icon = GFX_goal_unknown
+		x = 1
+		y = 4
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_braun_do_brukseli
+		}
+	}
+	focus = {
+		id = POL_nowa_nadzieja
+		icon = GFX_goal_unknown
+		x = 0
+		y = 5
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_pokonac_foliarzy
+		}
+		prerequisite = {
+			focus = POL_hold_lenny_narodowcow
+		}
+	}
+	focus = {
+		id = POL_ujarzmienie_aspergika
+		icon = GFX_goal_unknown
+		x = -4
+		y = 6
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_nowa_nadzieja
+		}
+		mutually_exclusive = {
+			focus = POL_przejrzenie_wiplera
+		}
+	}
+	focus = {
+		id = POL_zaorac_opozycje
+		icon = GFX_goal_unknown
+		x = 0
+		y = 7
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_nowa_nadzieja
+		}
+	}
+	focus = {
+		id = POL_przejrzenie_wiplera
+		icon = GFX_goal_unknown
+		x = 4
+		y = 6
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_nowa_nadzieja
+		}
+		mutually_exclusive = {
+			focus = POL_ujarzmienie_aspergika
+		}
+	}
+	focus = {
+		id = POL_a_poza_tym_sadze
+		icon = GFX_goal_unknown
+		x = 2
+		y = 7
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_przejrzenie_wiplera
+		}
+	}
+	focus = {
+		id = POL_pokazowa_egzekucja
+		icon = GFX_goal_unknown
+		x = 4
+		y = 7
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_przejrzenie_wiplera
+		}
+	}
+	focus = {
+		id = POL_calkowita_prywatyzacja
+		icon = GFX_goal_unknown
+		x = 2
+		y = 8
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_pokazowa_egzekucja
+		}
+	}
+	focus = {
+		id = POL_gandalf_bialy
+		icon = GFX_goal_unknown
+		x = 4
+		y = 8
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_pokazowa_egzekucja
+		}
+	}
+	focus = {
+		id = POL_jak_bedzie_w_wolnej_polsce
+		icon = GFX_goal_unknown
+		x = 6
+		y = 8
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_pokazowa_egzekucja
+		}
+	}
+	focus = {
+		id = POL_ase
+		icon = GFX_goal_unknown
+		x = 2
+		y = 9
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_calkowita_prywatyzacja
+		}
+	}
+	focus = {
+		id = POL_teatralne
+		icon = GFX_goal_unknown
+		x = 2
+		y = 10
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_ase
+		}
+	}
+	focus = {
+		id = POL_mam_najwieksze_ego
+		icon = GFX_goal_unknown
+		x = 2
+		y = 11
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_teatralne
+		}
+	}
+	focus = {
+		id = POL_skamląca_chuichahua
+		icon = GFX_goal_unknown
+		x = 1
+		y = 12
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_mam_najwieksze_ego
+		}
+		prerequisite = {
+			focus = POL_edukacja_wolnosciowa
+		}
+	}
+	focus = {
+		id = POL_sa_dwa_kraje
+		icon = GFX_goal_unknown
+		x = 4
+		y = 9
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_gandalf_bialy
+		}
+	}
+	focus = {
+		id = POL_bron_w_kazdym_domu
+		icon = GFX_goal_unknown
+		x = 6
+		y = 9
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_jak_bedzie_w_wolnej_polsce
+		}
+	}
+	focus = {
+		id = POL_wolnosci_oddac_nie_umiem
+		icon = GFX_goal_unknown
+		x = 4
+		y = 12
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_sa_dwa_kraje
+		}
+		prerequisite = {
+			focus = POL_ase
+		}
+		prerequisite = {
+			focus = POL_bron_w_kazdym_domu
+		}
+	}
+	focus = {
+		id = POL_zeby_zylo_sie_lepiej
+		icon = GFX_goal_unknown
+		x = 0
+		y = 10
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_ase
+		}
+	}
+	focus = {
+		id = POL_browar_mentzen
+		icon = GFX_goal_unknown
+		x = -2
+		y = 11
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_zeby_zylo_sie_lepiej
+		}
+	}
+	focus = {
+		id = POL_kancelaria_mentzen
+		icon = GFX_goal_unknown
+		x = -1
+		y = 12
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_browar_mentzen
+		}
+	}
+	focus = {
+		id = POL_edukacja_wolnosciowa
+		icon = GFX_goal_unknown
+		x = 0
+		y = 11
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_zeby_zylo_sie_lepiej
+		}
+	}
+
+
+
+	focus = {
+		id = POL_korwin_nadal_u_wladzy
+		icon = GFX_goal_unknown
+		x = -7
+		y = 1
+		relative_position_id = POL_pierwszy_kongres_w_wolnej_polsce
+		cost = 5
+		allow_branch = {
+			konfederacja_is_avaliable = yes
+			NOT = {
+				OR = {
+					has_completed_focus = POL_koniec_cukru
+					has_completed_focus = POL_usuniecie_korwina
+				}
+			}
+		}
+		prerequisite = {
+			focus = POL_pierwszy_kongres_w_wolnej_polsce
+		}
+		mutually_exclusive = {
+			focus = POL_koniec_cukru
+			focus = POL_usuniecie_korwina
+		}
+		offset = {
+			x = 7
+			y = 0
+			trigger = {
+				has_completed_focus = POL_korwin_nadal_u_wladzy
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+	focus = {
+		id = POL_masakracja_lewakow
+		icon = GFX_focus_CHL_union_of_hispanic_republics
+		x = -4
+		y = 1
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_korwin_nadal_u_wladzy
+		}
+	}
+	focus = {
+		id = POL_nie_wiedzial
+		icon = GFX_focus_ger_oppose_hitler
+		x = -2
+		y = 1
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_korwin_nadal_u_wladzy
+		}
+	}
+	focus = {
+		id = POL_parowex
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_korwin_nadal_u_wladzy
+		}
+	}
+	focus = {
+		id = POL_wolny_rynek
+		icon = GFX_goal_unknown
+		x = 2
+		y = 1
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_korwin_nadal_u_wladzy
+		}
+	}
+	focus = {
+		id = POL_w_demokracji
+		icon = GFX_focus_ETH_callout_to_the_world
+		x = -4
+		y = 2
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_masakracja_lewakow
+		}
+	}
+	focus = {
+		id = POL_byl_taki_czlowiek
+		icon = GFX_goal_unknown
+		x = -2
+		y = 2
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_nie_wiedzial
+		}
+	}
+	focus = {
+		id = POL_demokraty_za_kraty
+		icon = GFX_focus_GER_strafbatalion
+		x = 0
+		y = 2
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_parowex
+		}
+	}
+	focus = {
+		id = POL_awansuj_berkowitza
+		icon = GFX_goal_unknown
+		x = 2
+		y = 2
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_wolny_rynek
+		}
+	}
+	focus = {
+		id = POL_krul_na_pyrkon
+		icon = GFX_goal_unknown
+		x = -6
+		y = 3
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_w_demokracji
+		}
+	}
+	focus = {
+		id = POL_ja_nie_urzywam_slowa_na_g
+		icon = GFX_goal_unknown
+		x = -6
+		y = 4
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_krul_na_pyrkon
+		}
+	}
+	focus = {
+		id = POL_ozjasz_goldberg
+		icon = GFX_goal_unknown
+		x = 2
+		y = 11
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_korwin_z_szafy
+		}
+	}
+	focus = {
+		id = POL_kto_nie_pracuje
+		icon = GFX_focus_AFG_sugar_factory
+		x = -4
+		y = 4
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_wws
+		}
+	}
+	focus = {
+		id = POL_wws
+		icon = GFX_goal_unknown
+		x = -4
+		y = 3
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_w_demokracji
+		}
+	}
+	focus = {
+		id = POL_zapros_zagranicznych_ekspertow
+		icon = GFX_focus_ARG_accept_german_advisors
+		x = -2
+		y = 3
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_byl_taki_czlowiek
+		}
+	}
+	focus = {
+		id = POL_usun_wiek_wyborczy
+		icon = GFX_focus_POL_nationalist_education
+		x = 0
+		y = 3
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_demokraty_za_kraty
+		}
+	}
+	focus = {
+		id = POL_good_red_dead_red
+		icon = GFX_focus_ger_great_red_menace
+		x = 2
+		y = 3
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_awansuj_berkowitza
+		}
+	}
+	focus = {
+		id = POL_eu_ojczyzn
+		icon = GFX_focus_generic_the_council_of_europe
+		x = 2
+		y = 4
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_good_red_dead_red
+		}
+	}
+	focus = {
+		id = POL_koronacja
+		icon = GFX_goal_unknown
+		x = -2
+		y = 4
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_krul_na_pyrkon
+		}
+		prerequisite = {
+			focus = POL_wws
+		}
+		prerequisite = {
+			focus = POL_zapros_zagranicznych_ekspertow
+		}
+		prerequisite = {
+			focus = POL_usun_wiek_wyborczy
+		}
+		prerequisite = {
+			focus = POL_good_red_dead_red
+		}
+	}
+	focus = {
+		id = POL_legalizuj_femboy
+		icon = GFX_goal_unknown
+		x = 0
+		y = 5
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_koronacja
+		}
+		prerequisite = {
+			focus = POL_eu_ojczyzn
+		}
+	}
+	focus = {
+		id = POL_wzmocnienie_niem_monarchizmu
+		icon = GFX_focus_ger_return_of_the_kaiser
+		x = -2
+		y = 6
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		mutually_exclusive = {
+			focus = POL_korwin_cyborg
+		}
+		prerequisite = {
+			focus = POL_legalizuj_femboy
+		}
+	}
+	focus = {
+		id = POL_wizyty_krolewskie
+		icon = GFX_focus_generic_monarchy_2
+		x = 2
+		y = 6
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_legalizuj_femboy
+		}
+	}
+	focus = {
+		id = POL_krul_abdykuje
+		icon = GFX_goal_unknown
+		x = -1
+		y = 8
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5	
+		prerequisite = {
+			focus = POL_wizyty_krolewskie
+		}
+		prerequisite = {
+			focus = POL_wzmocnienie_niem_monarchizmu
+		}
+		mutually_exclusive = {
+			focus = POL_korwin_cyborg
+		} 
+	}
+	focus = {
+		id = POL_korwin_cyborg
+		icon = GFX_goal_unknown
+		x = 1
+		y = 8
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_wizyty_krolewskie
+		}
+		prerequisite = {
+			focus = POL_wzmocnienie_niem_monarchizmu
+		}
+		mutually_exclusive = {
+			focus = POL_krul_abdykuje
+		} 
+	}
+	focus = {
+		id = POL_korwin_z_szafy
+		icon = GFX_goal_unknown
+		x = 0
+		y = 10
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_krul_abdykuje
+			focus = POL_korwin_cyborg
+		}
+	}
+	focus = {
+		id = POL_fundacja_kisiela
+		icon = GFX_goal_unknown
+		x = 0
+		y = 11
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_korwin_z_szafy
+		}
+	}
+	focus = {
+		id = POL_Sentymenty_IRP
+		icon = GFX_focus_LIT_restore_order
+		x = 0
+		y = 12
+		relative_position_id = POL_korwin_nadal_u_wladzy
+		cost = 5
+		prerequisite = {
+			focus = POL_fundacja_kisiela
+		}
+	}
+	
+
+
+
+
+
+	focus = {
+		id = POL_ustawa_lobbystowska
+		icon = GFX_goal_unknown
+		x = -6
+		y = 9
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_umowy_z_wielkimi_koncernami
+		}
+	}
+	focus = {
+		id = POL_rozwiazanie_kwestii_korwinowskiej
+		icon = GFX_goal_unknown
+		x = -4
+		y = 11
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_powrot_do_socjali
+		}
+	}
+	focus = {
+		id = POL_negocjacje_z_obajtkiem
+		icon = GFX_goal_unknown
+		x = -2
+		y = 9
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_inba_naftowa
+		}
+	}
+	focus = {
+		id = POL_liberalizm_nie_taki_dobry
+		icon = GFX_goal_unknown
+		x = -2
+		y = 7
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_ujarzmienie_aspergika
+		}
+	}
+	focus = {
+		id = POL_inba_naftowa
+		icon = GFX_goal_unknown
+		x = -2
+		y = 8
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_liberalizm_nie_taki_dobry
+		}
+	}
+	focus = {
+		id = POL_dofinansowanie_abw
+		icon = GFX_goal_unknown
+		x = -6
+		y = 7
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_ujarzmienie_aspergika
+		}
+	}
+	focus = {
+		id = POL_inba_z_ukrainskim_zbozem
+		icon = GFX_goal_unknown
+		x = -4
+		y = 8
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_ujarzmienie_aspergika
+		}
+	}
+	focus = {
+		id = POL_powrot_do_socjali
+		icon = GFX_goal_unknown
+		x = -4
+		y = 10
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_inba_z_ukrainskim_zbozem
+		}
+		completion_reward = {
+			add_ideas = POL_500plus
+		}
+	}
+	focus = {
+		id = POL_umowy_z_wielkimi_koncernami
+		icon = GFX_goal_unknown
+		x = -6
+		y = 8
+		relative_position_id = POL_usuniecie_korwina
+		cost = 10
+		prerequisite = {
+			focus = POL_dofinansowanie_abw
+		}
+	}
+	focus = {
+		id = POL_konfedepis
+		icon = GFX_goal_unknown
+		x = -4
+		y = 12
+		relative_position_id = POL_usuniecie_korwina
+		cost = 15
+		prerequisite = {
+			focus = POL_ustawa_lobbystowska
+		}
+		prerequisite = {
+			focus = POL_rozwiazanie_kwestii_korwinowskiej
+		}
+		prerequisite = {
+			focus = POL_negocjacje_z_obajtkiem
+		}
+	}
+	focus = {
+		id = POL_pisowska_taktyka_ue
+		icon = GFX_goal_unknown
+		x = -4
+		y = 13
+		relative_position_id = POL_usuniecie_korwina
+		cost = 5
+		prerequisite = {
+			focus = POL_konfedepis
+		}
+	}
+
+
+	focus = {
+		id = POL_koniec_cukru
+		icon = GFX_goal_unknown
+		x = 7
+		y = 1
+		relative_position_id = POL_pierwszy_kongres_w_wolnej_polsce
+		cost = 5
+		allow_branch = {
+			konfederacja_is_avaliable = yes
+			NOT = {
+				OR = {
+					has_completed_focus = POL_usuniecie_korwina
+					has_completed_focus = POL_korwin_nadal_u_wladzy
+				}
+			}
+		}
+		prerequisite = {
+			focus = POL_pierwszy_kongres_w_wolnej_polsce
+		}
+		mutually_exclusive = {
+			focus = POL_usuniecie_korwina
+			focus = POL_korwin_nadal_u_wladzy
+		} 
+		offset = {
+			x = -7
+			y = 0
+			trigger = {
+				has_completed_focus = POL_koniec_cukru
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+
+
+	focus = {
+		id = POL_braun
+		icon = GFX_goal_unknown
+		x = -7
+		y = 1
+		relative_position_id = POL_koniec_cukru
+		cost = 5
+		prerequisite = {
+			focus = POL_koniec_cukru
+	}
+	mutually_exclusive = {
+			focus = POL_wolnosciowcy
+			focus = POL_przewrot_narodowcow
+		} 
+	}
+	focus = {
+		id = POL_kkp
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_braun
+		}
+	}
+	focus = {
+		id = POL_szuranie
+		icon = GFX_goal_unknown
+		x = -2
+		y = 2
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_kkp
+	}
+	}
+	focus = {
+		id = POL_katolicki_taliban
+		icon = GFX_goal_unknown
+		x = 0
+		y = 2
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_kkp
+	}
+		prerequisite = {
+			focus = POL_warto_golic_brode
+	}
+		prerequisite = {
+			focus = POL_zabiegajmy_o_koalicjantów
+	}
+	}
+	
+	focus = {
+		id = POL_stop_propagandzie_zboczeń
+		icon = GFX_goal_unknown
+		x = 2
+		y = 2
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_kkp
+	}
+	}
+	focus = {
+		id = POL_dziwne_dymy
+		icon = GFX_goal_unknown
+		x = 2
+		y = 3
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_stop_propagandzie_zboczeń
+	}
+	}
+	focus = {
+		id = POL_gasnica_w_kazdym_domu
+		icon = GFX_goal_unknown
+		x = -2
+		y = 3
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_szuranie
+	}
+	}
+	focus = {
+		id = POL_kosciol_szkola_strzelnica
+		icon = GFX_goal_unknown
+		x = 0
+		y = 3
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_katolicki_taliban
+	}
+	}
+	focus = {
+		id = POL_sposcizna_prezesa
+		icon = GFX_goal_unknown
+		x = 0
+		y = 4
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_dziwne_dymy
+	}
+	prerequisite = {
+		focus = POL_kosciol_szkola_strzelnica
+	}
+	prerequisite = {
+	focus = POL_gasnica_w_kazdym_domu
+	}
+	}
+	focus = {
+		id = POL_rozwiazanie_kondominium
+		icon = GFX_goal_unknown
+		x = -2
+		y = 5
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_sposcizna_prezesa
+	}
+	}
+	focus = {
+		id = POL_dofinansowania_z_Moskwy
+		icon = GFX_goal_unknown
+		x = 2
+		y = 7
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_stop_ukrainizacji
+	}
+	}
+	focus = {
+		id = POL_ucieczka_z_eurokolchozu
+		icon = GFX_goal_unknown
+		x = -2
+		y = 6
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_rozwiazanie_kondominium
+	}
+	}
+	focus = {
+		id = POL_strae_godlo_nierzydowskie
+		icon = GFX_goal_unknown
+		x = -2
+		y = 7
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_ucieczka_z_eurokolchozu
+	}
+	}
+
+	focus = {
+		id = POL_dostawy_cukru
+		icon = GFX_goal_unknown
+		x = 0
+		y = 5
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_sposcizna_prezesa
+	}
+	}
+	focus = {
+		id = POL_prawdziwa_prawica
+		icon = GFX_goal_unknown
+		x = 0
+		y = 6
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_dostawy_cukru
+	}
+	}
+	focus = {
+		id = POL_zniszczmy_zydokomune
+		icon = GFX_goal_unknown
+		x = 2
+		y = 5
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_sposcizna_prezesa
+	}
+
+	}
+	focus = {
+		id = POL_stop_ukrainizacji
+		icon = GFX_goal_unknown
+		x = 2
+		y = 6
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_zniszczmy_zydokomune
+	}
+	}
+	focus = {
+		id = POL_wielkie_księstwo
+		icon = GFX_goal_unknown
+		x = 0
+		y = 7
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_prawdziwa_prawica
+	}
+	prerequisite = {
+		focus = POL_stop_ukrainizacji
+	}
+	prerequisite = {
+		focus = POL_ucieczka_z_eurokolchozu
+	}
+	}
+	focus = {
+		id = POL_szczerbiec
+		icon = GFX_goal_unknown
+		x = -3
+		y = 8
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_wielkie_księstwo
+	}
+	}
+	focus = {
+		id = POL_intronizacja_chrystusa_krula
+		icon = GFX_goal_unknown
+		x = -1
+		y = 8
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_wielkie_księstwo
+	}
+	}
+	focus = {
+		id = POL_mateusz_jakob
+		icon = GFX_goal_unknown
+		x = 1
+		y = 8
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_wielkie_księstwo
+	}
+	}
+	focus = {
+		id = POL_sluby_lwowskie
+		icon = GFX_goal_unknown
+		x = -1
+		y = 9
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_intronizacja_chrystusa_krula
+	}
+	}
+	focus = {
+		id = POL_gietrzwald
+		icon = GFX_goal_unknown
+		x = -3
+		y = 9
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_szczerbiec
+	}
+	}
+	focus = {
+		id = POL_wojna_z_lidlem
+		icon = GFX_goal_unknown
+		x = -3
+		y = 10
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_gietrzwald
+	}
+	}
+	focus = {
+		id = POL_usun_piecg
+		icon = GFX_goal_unknown
+		x = 1
+		y = 9
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_mateusz_jakob
+	}
+	}
+	focus = {
+		id = POL_przymusowy_pobor
+		icon = GFX_goal_unknown
+		x = 0
+		y = 10
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_sluby_lwowskie
+	}
+		prerequisite = {
+			focus = POL_usun_piecg
+	}
+	}
+	focus = {
+		id = POL_warto_golic_brode
+		icon = GFX_goal_unknown
+		x = 2
+		y = 1
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_braun
+	}
+	}
+	focus = {
+		id = POL_libertarianska_monarchia
+		icon = GFX_goal_unknown
+		x = 3
+		y = 8
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_wielkie_księstwo
+	}
+	}
+	focus = {
+		id = POL_antykapiatlistyczny_antysocjalizm
+		icon = GFX_goal_unknown
+		x = 3
+		y = 9
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_libertarianska_monarchia
+	}
+	}
+	focus = {
+		id = POL_czy_yoda_byl_zydem
+		icon = GFX_goal_unknown
+		x = 3
+		y = 10
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_libertarianska_monarchia
+	}
+	}
+	focus = {
+		id = POL_zapedy_imperialne
+		icon = GFX_goal_unknown
+		x = 0
+		y = 11
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_czy_yoda_byl_zydem
+	}
+		prerequisite = {
+			focus = POL_przymusowy_pobor
+	}
+		prerequisite = {
+			focus = POL_wojna_z_lidlem
+	}
+	}
+	focus = {
+		id = POL_zabiegajmy_o_koalicjantów
+		icon = GFX_goal_unknown
+		x = -2
+		y = 1
+		relative_position_id = POL_braun
+		cost = 5
+		prerequisite = {
+			focus = POL_braun
+	}
+}
+
+
+
+
+
+
+
+
+	focus = {
+		id = POL_wolnosciowcy
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		relative_position_id = POL_koniec_cukru
+		cost = 0
+		prerequisite = {
+			focus = POL_koniec_cukru
+		}
+		mutually_exclusive = {
+			focus = POL_braun
+			focus = POL_przewrot_narodowcow
+		}
+	}
+	focus = {
+		id = POL_rozwiazanie_sejmu
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		relative_position_id = POL_wolnosciowcy
+		cost = 5
+		prerequisite = {
+			focus = POL_wolnosciowcy
+	}
+}
+focus = {
+	id = POL_libertarianizm_gospodarczy
+	icon = GFX_goal_unknown
+	x = -2
+	y = 1
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_wolnosciowcy
+	}
+}
+focus = {
+	id = POL_polski_paleolibertarianizm
+	icon = GFX_goal_unknown
+	x = 2
+	y = 1
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_wolnosciowcy
+	}
+}
+focus = {
+	id = POL_neokorwinizm
+	icon = GFX_goal_unknown
+	x = -1
+	y = 2
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_libertarianizm_gospodarczy
+	}
+	prerequisite = {
+	focus = POL_rozwiazanie_sejmu
+	}
+}
+focus = {
+	id = POL_namiestnik_minarchistyczny
+	icon = GFX_goal_unknown
+	x = 0
+	y = 3
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_neokorwinizm
+	}
+	prerequisite = {
+		focus = POL_zniesienie_instytucji_malzenstwa
+	}
+}
+focus = {
+	id = POL_zniesienie_instytucji_malzenstwa
+	icon = GFX_goal_unknown
+	x = 1
+	y = 2
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_rozwiazanie_sejmu
+	}
+prerequisite = {
+	focus = POL_polski_paleolibertarianizm
+	}
+}
+focus = {
+	id = POL_powrot_leroya
+	icon = GFX_goal_unknown
+	x = 2
+	y = 3
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+prerequisite = {
+	focus = POL_zniesienie_instytucji_malzenstwa
+	}
+}
+focus = {
+	id = POL_dziambor
+	icon = GFX_goal_unknown
+	x = -1
+	y = 4
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_namiestnik_minarchistyczny
+	}
+	mutually_exclusive = {
+		focus = POL_sosnierz
+	}
+}
+focus = {
+	id = POL_sosnierz
+	icon = GFX_goal_unknown
+	x = 1
+	y = 4
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_namiestnik_minarchistyczny
+	}
+	prerequisite = {
+		focus = POL_powrot_leroya
+	}
+	mutually_exclusive = {
+		focus = POL_dziambor
+	}
+}
+focus = {
+	id = POL_hot_dogi_dla_wszystkich
+	icon = GFX_goal_unknown
+	x = 0
+	y = 5
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_dziambor
+		focus = POL_sosnierz
+	}
+}
+focus = {
+	id = POL_goło_i_wesolo
+	icon = GFX_goal_unknown
+	x = -2
+	y = 6
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_hot_dogi_dla_wszystkich
+	}
+}
+focus = {
+	id = POL_wolny_rynek_media
+	icon = GFX_goal_unknown
+	x = 0
+	y = 6
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_hot_dogi_dla_wszystkich
+	}
+}
+focus = {
+	id = POL_wolnosc_slowa
+	icon = GFX_goal_unknown
+	x = 2
+	y = 6
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_hot_dogi_dla_wszystkich
+	}
+}
+focus = {
+	id = POL_heil_korwin
+	icon = GFX_goal_unknown
+	x = -2
+	y = 7
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_goło_i_wesolo
+	}
+}
+focus = {
+	id = POL_kucanie
+	icon = GFX_goal_unknown
+	x = 0
+	y = 7
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_wolny_rynek_media
+	}
+}
+focus = {
+	id = POL_MdW
+	icon = GFX_goal_unknown
+	x = 2
+	y = 7
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_wolnosc_slowa
+	}
+}
+focus = {
+	id = POL_ankap_kulesza
+	icon = GFX_goal_unknown
+	x = 0
+	y = 8
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_kucanie
+	}
+	prerequisite = {
+		focus = POL_MdW
+	}
+	prerequisite = {
+		focus = POL_heil_korwin
+	}
+}
+focus = {
+	id = POL_uwolnienie_misiow
+	icon = GFX_goal_unknown
+	x = -1
+	y = 9
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_ankap_kulesza
+	}
+}
+focus = {
+	id = POL_stop_prorosyjskosci
+	icon = GFX_goal_unknown
+	x = 1
+	y = 9
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_ankap_kulesza
+	}
+}
+focus = {
+	id = POL_wolna_europa
+	icon = GFX_goal_unknown
+	x = 0
+	y = 10
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_uwolnienie_misiow
+	}
+	prerequisite = {
+		focus = POL_stop_prorosyjskosci
+	}
+}
+focus = {
+	id = POL_wolnosc_nie_szlachtokracja
+	icon = GFX_goal_unknown
+	x = 0
+	y = 11
+	relative_position_id = POL_wolnosciowcy
+	cost = 5
+	prerequisite = {
+		focus = POL_wolna_europa
+	}
+}
+
+
+
+
+
+
+
+
+
+
+focus = {
+		id = POL_przewrot_narodowcow
+		icon = GFX_goal_unknown
+		x = 7
+		y = 1
+		relative_position_id = POL_koniec_cukru
+		cost = 5
+		prerequisite = {
+			focus = POL_koniec_cukru
+	}
+		mutually_exclusive = {
+			focus = POL_braun
+			focus = POL_wolnosciowcy
+		}
+}
+focus = {
+	id = POL_edukacja_katolicka
+	icon = GFX_goal_unknown
+	x = -2
+	y = 1
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_przewrot_narodowcow
+	}
+}
+focus = {
+	id = POL_cztery_godziny_religii
+	icon = GFX_goal_unknown
+	x = -2
+	y = 2
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_edukacja_katolicka
+	}
+}
+focus = {
+	id = POL_wykorzystanie_sebixow
+	icon = GFX_goal_unknown
+	x = 0
+	y = 1
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_przewrot_narodowcow
+	}
+}
+focus = {
+	id = POL_pedoliberalizm
+	icon = GFX_goal_unknown
+	x = 0
+	y = 2
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_wykorzystanie_sebixow
+	}
+}
+focus = {
+	id = POL_nauki_z_dmowskiego
+	icon = GFX_goal_unknown
+	x = 2
+	y = 1
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_przewrot_narodowcow
+	}
+}
+focus = {
+	id = POL_piasecki_tez_fajny
+	icon = GFX_goal_unknown
+	x = 2
+	y = 2
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_nauki_z_dmowskiego
+	}
+}
+
+focus = {
+	id = POL_wyplenimy_libkow_z_partii
+	icon = GFX_goal_unknown
+	x = 0
+	y = 3
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_cztery_godziny_religii
+	}
+	prerequisite = {
+		focus = POL_pedoliberalizm
+	}
+	prerequisite = {
+		focus = POL_piasecki_tez_fajny
+	}
+	
+}
+focus = {
+	id = POL_konfa_ruch_narodowy
+	icon = GFX_goal_unknown
+	x = 0
+	y = 4
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_wyplenimy_libkow_z_partii
+	}
+}
+focus = {
+	id = POL_mussolinista_winnicki
+	icon = GFX_goal_unknown
+	x = -1
+	y = 5
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_konfa_ruch_narodowy
+	}
+	mutually_exclusive = {
+		focus = POL_krzysiu_narodowy_libek
+	}
+}
+focus = {
+	id = POL_krzysiu_narodowy_libek
+	icon = GFX_goal_unknown
+	x = 1
+	y = 5
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_konfa_ruch_narodowy
+	}
+	mutually_exclusive = {
+		focus = POL_mussolinista_winnicki
+	}
+}
+focus = {
+	id = POL_penalizacja_aborcji
+	icon = GFX_goal_unknown
+	x = 0
+	y = 6
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_mussolinista_winnicki
+		focus = POL_krzysiu_narodowy_libek
+	}
+}
+focus = {
+	id = POL_czerwonym_smierc
+	icon = GFX_goal_unknown
+	x = -2
+	y = 7
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_penalizacja_aborcji
+	}
+}
+focus = {
+	id = POL_pedalstwo_tylko_narodowe
+	icon = GFX_goal_unknown
+	x = 0
+	y = 7
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_penalizacja_aborcji
+	}
+}
+focus = {
+	id = POL_to_tylko_narodowa_demokracja
+	icon = GFX_goal_unknown
+	x = 2
+	y = 7
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_penalizacja_aborcji
+	}
+}
+focus = {
+	id = POL_afterki_po_marszach
+	icon = GFX_goal_unknown
+	x = 0
+	y = 8
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_pedalstwo_tylko_narodowe
+	}
+}
+focus = {
+	id = POL_normalna_rodzina_to_podstawa
+	icon = GFX_goal_unknown
+	x = 0
+	y = 9
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_afterki_po_marszach
+	}
+}
+focus = {
+	id = POL_onr_homokomando
+	icon = GFX_goal_unknown
+	x = 0
+	y = 10
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_normalna_rodzina_to_podstawa
+	}
+}
+focus = {
+	id = POL_jpII_wielkim_czlowiekiem_byl
+	icon = GFX_goal_unknown
+	x = -2
+	y = 8
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_czerwonym_smierc
+	}
+}
+focus = {
+	id = POL_czolem_wielkiej_polsce
+	icon = GFX_goal_unknown
+	x = -2
+	y = 9
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_jpII_wielkim_czlowiekiem_byl
+	}
+}
+focus = {
+	id = POL_maryja_krolowa
+	icon = GFX_goal_unknown
+	x = -2
+	y = 10
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_czolem_wielkiej_polsce
+	}
+}
+focus = {
+	id = POL_antyrosyjskosc_panslavianizm
+	icon = GFX_goal_unknown
+	x = 2
+	y = 8
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_to_tylko_narodowa_demokracja
+	}
+}
+focus = {
+	id = POL_nacjonalizacja_majątkow_antypolakuf
+	icon = GFX_goal_unknown
+	x = 2
+	y = 9
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_antyrosyjskosc_panslavianizm
+	}
+}
+focus = {
+	id = POL_silni_slowianie
+	icon = GFX_goal_unknown
+	x = 2
+	y = 10
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_nacjonalizacja_majątkow_antypolakuf
+	}
+}
+focus = {
+	id = POL_chocby_byla_z_tego_draka
+	icon = GFX_goal_unknown
+	x = 0
+	y = 11
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_silni_slowianie
+	}
+	prerequisite = {
+		focus = POL_maryja_krolowa
+	}
+	prerequisite = {
+		focus = POL_onr_homokomando
+	}
+}
+focus = {
+	id = POL_wielkopolska_drugim_rzymem
+	icon = GFX_goal_unknown
+	x = 0
+	y = 12
+	relative_position_id = POL_przewrot_narodowcow
+	cost = 5
+	prerequisite = {
+		focus = POL_chocby_byla_z_tego_draka
+	}
+	completion_reward = {
+		set_capital = 56 # Poznań
+		add_building_construction = {
+			province = 56 # Poznań
+			building = infrastructure
+			level = 10
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+	focus = {
+		id = POL_opcja_kamraci
+		icon = GFX_goal_unknown
+		x = 55
+		y = 1
+		relative_position_id = POL_opcja_prawica
+		cost = 5
+		allow_branch = {
+			always = no
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_lepper
+					has_completed_focus = POL_opcja_pis
+					has_completed_focus = POL_opcja_konfa
+					has_completed_focus = POL_opcja_kukiz
+					has_completed_focus = POL_opcja_zero
+				}
+			}
+		}
+		available = {
+			always = no
+		}
+		prerequisite = {
+			focus = POL_opcja_prawica
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_lepper
+			focus = POL_opcja_pis
+			focus = POL_opcja_konfa
+			focus = POL_opcja_kukiz
+			focus = POL_opcja_zero
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+	focus = {
+		id = POL_jablon_vel_olszanski
+		icon = GFX_goal_unknown
+		x = 0
+		y = 2
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_kamraci
+		}
+	}
+	focus = {
+		id = POL_zwiazek_jaszczurczy
+		icon = GFX_goal_unknown
+		x = 0
+		y = 4
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_jablon_vel_olszanski
+		}
+	}
+	focus = {
+		id = POL_zebranie_elektoratu_konfy
+		icon = GFX_goal_unknown
+		x = 0
+		y = 6
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_zwiazek_jaszczurczy
+		}
+	}
+	focus = {
+		id = POL_dmowski_naszym_wodzem
+		icon = GFX_goal_unknown
+		x = 2
+		y = 6
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_zwiazek_jaszczurczy
+		}
+	}
+	focus = {
+		id = POL_panstwo_narodowe
+		icon = GFX_goal_unknown
+		x = -2
+		y = 6
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_zwiazek_jaszczurczy
+		}
+	}
+	focus = {
+		id = POL_polska_dla_polakow
+		icon = GFX_goal_unknown
+		x = -2
+		y = 8
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_panstwo_narodowe
+		}
+	}
+	focus = {
+		id = POL_protekcjonizm_dla_dobra_narodowego
+		icon = GFX_goal_unknown
+		x = -2
+		y = 9
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_polska_dla_polakow
+		}
+	}
+	focus = {
+		id = POL_zaorac_liberałow_antypolakow
+		icon = GFX_goal_unknown
+		x = 2
+		y = 8
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_dmowski_naszym_wodzem
+		}
+	}
+	focus = {
+		id = POL_zbierzmy_onrowcow
+		icon = GFX_goal_unknown
+		x = 2
+		y = 9
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_zaorac_liberałow_antypolakow
+		}
+	}
+	focus = {
+		id = POL_paleczka
+		icon = GFX_goal_unknown
+		x = 0
+		y = 8
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_zebranie_elektoratu_konfy
+		}
+	}
+	focus = {
+		id = POL_katolicyzm_nie_wyklucza_tradycji
+		icon = GFX_goal_unknown
+		x = 0
+		y = 9
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_paleczka
+		}
+	}
+	focus = {
+		id = POL_komuno_nazizm_narodowo_slowianski
+		icon = GFX_goal_unknown
+		x = 0
+		y = 10
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_zbierzmy_onrowcow
+		}
+		prerequisite = {
+			focus = POL_protekcjonizm_dla_dobra_narodowego
+		}
+		prerequisite = {
+			focus = POL_katolicyzm_nie_wyklucza_tradycji
+		}
+	}
+	focus = {
+		id = POL_wizyta_jaszczura_w_choroszczy
+		icon = GFX_goal_unknown
+		x = -3
+		y = 11
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_komuno_nazizm_narodowo_slowianski
+		}
+	}
+	focus = {
+		id = POL_lewakow_trzeba_bic
+		icon = GFX_goal_unknown
+		x = -1
+		y = 11
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_komuno_nazizm_narodowo_slowianski
+		}
+	}
+	focus = {
+		id = POL_promocja_meskich_wartosci
+		icon = GFX_goal_unknown
+		x = 1
+		y = 11
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_komuno_nazizm_narodowo_slowianski
+		}
+	}
+	focus = {
+		id = POL_quo_vadis
+		icon = GFX_goal_unknown
+		x = 3
+		y = 11
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_komuno_nazizm_narodowo_slowianski
+		}
+	}
+	focus = {
+		id = POL_nptv_oficjalnym_medium
+		icon = GFX_goal_unknown
+		x = 2
+		y = 12
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_quo_vadis
+		}
+		prerequisite = {
+			focus = POL_promocja_meskich_wartosci
+		}
+	}
+	focus = {
+		id = POL_problem_osobowosciowy
+		icon = GFX_goal_unknown
+		x = -2
+		y = 12
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_wizyta_jaszczura_w_choroszczy
+		}
+		prerequisite = {
+			focus = POL_lewakow_trzeba_bic
+		}
+	}
+	focus = {
+		id = POL_maciak_pederasto
+		icon = GFX_goal_unknown
+		x = 0
+		y = 12
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_promocja_meskich_wartosci
+		}
+		prerequisite = {
+			focus = POL_lewakow_trzeba_bic
+		}
+	}
+	focus = {
+		id = POL_reformy_osadowskiego
+		icon = GFX_goal_unknown
+		x = 1
+		y = 13
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_maciak_pederasto
+		}
+		prerequisite = {
+			focus = POL_nptv_oficjalnym_medium
+		}
+	}
+	focus = {
+		id = POL_jaszczurcze_brygady_rewolucyjne
+		icon = GFX_goal_unknown
+		x = -1
+		y = 13
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_problem_osobowosciowy
+		}
+		prerequisite = {
+			focus = POL_maciak_pederasto
+		}
+	}
+	focus = {
+		id = POL_wielka_nacjonalizacja
+		icon = GFX_goal_unknown
+		x = 0
+		y = 14
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_reformy_osadowskiego
+		}
+		prerequisite = {
+			focus = POL_jaszczurcze_brygady_rewolucyjne
+		}
+	}
+	focus = {
+		id = POL_eksploatacja_korwinowej_piwnicy
+		icon = GFX_goal_unknown
+		x = 1
+		y = 15
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_wielka_nacjonalizacja
+		}
+	}
+	focus = {
+		id = POL_likwidacja_wolnych_mediow
+		icon = GFX_goal_unknown
+		x = -1
+		y = 15
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_wielka_nacjonalizacja
+		}
+	}
+	focus = {
+		id = POL_jedna_rzesza_jeden_narod_jeden_kamrat
+		icon = GFX_goal_unknown
+		x = 0
+		y = 16
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_likwidacja_wolnych_mediow
+		}
+		prerequisite = {
+			focus = POL_eksploatacja_korwinowej_piwnicy
+		}
+	}
+	focus = {
+		id = POL_oplaceni_influenserow
+		icon = GFX_goal_unknown
+		x = 0
+		y = 17
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_jedna_rzesza_jeden_narod_jeden_kamrat
+		}
+	}
+	focus = {
+		id = POL_czolem_wielkiej_lechii
+		icon = GFX_goal_unknown
+		x = 0
+		y = 18
+		relative_position_id = POL_opcja_kamraci
+		cost = 5
+		prerequisite = {
+			focus = POL_oplaceni_influenserow
+		}
+	}
+
+
+
+
+
+
+
+
+
+	focus = {
+		id = POL_opcja_zero
+		icon = GFX_goal_unknown
+		x = 73
+		y = 1
+		relative_position_id = POL_opcja_prawica
+		cost = 5
+		allow_branch = {
+			always = no
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_lepper
+					has_completed_focus = POL_opcja_pis
+					has_completed_focus = POL_opcja_konfa
+					has_completed_focus = POL_opcja_kukiz
+					has_completed_focus = POL_opcja_kamraci
+				}
+			}		
+		}
+		available = {
+			always = no
+		}
+		prerequisite = {
+			focus = POL_opcja_prawica
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_lepper
+			focus = POL_opcja_pis
+			focus = POL_opcja_konfa
+			focus = POL_opcja_kamraci
+			focus = POL_opcja_kukiz
+		
+		}
+		offset = {
+			x = -30
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_prawica
+			}
+		}
+		offset = {
+			x = -43
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_zero
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+	focus = {
+		id = POL_za_kase_od_pis
+		icon = GFX_goal_unknown
+		x = -1
+		y = 1
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_zero
+		}
+	}
+	focus = {
+		id = POL_zrobmy_to_od_zera
+		icon = GFX_goal_unknown
+		x = 1
+		y = 1
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_zero
+		}
+	}
+	focus = {
+		id = POL_wolne_media
+		icon = GFX_goal_unknown
+		x = 0
+		y = 2
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_za_kase_od_pis
+	}
+		prerequisite = {
+			focus = POL_zrobmy_to_od_zera
+		}
+	}
+	focus = {
+		id = POL_wybor_redaktora_naczelnego
+		icon = GFX_goal_unknown
+		x = 0
+		y = 3
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_wolne_media
+		}
+	}
+	focus = {
+		id = POL_stanowski
+		icon = GFX_goal_unknown
+		x = -1
+		y = 4
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_wybor_redaktora_naczelnego
+		}
+		mutually_exclusive = {
+			focus = POL_mazurek
+		}
+	}
+	focus = {
+		id = POL_mazurek
+		icon = GFX_goal_unknown
+		x = 1
+		y = 4
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_wybor_redaktora_naczelnego
+		}
+		mutually_exclusive = {
+			focus = POL_stanowski
+		}
+	}
+	focus = {
+		id = POL_stonoga_zbaitowany
+		icon = GFX_goal_unknown
+		x = 0
+		y = 5
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_stanowski
+			focus = POL_mazurek
+		}
+	}
+	focus = {
+		id = POL_vamos_polska
+		icon = GFX_goal_unknown
+		x = 0
+		y = 7
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_stonoga_zbaitowany
+		}
+	}
+	focus = {
+		id = POL_wina_mazurka
+		icon = GFX_goal_unknown
+		x = -5
+		y = 6
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_stonoga_zbaitowany
+		}
+	}
+	focus = {
+		id = POL_zero_kampanii
+		icon = GFX_goal_unknown
+		x = 5
+		y = 6
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_stonoga_zbaitowany
+		}
+	}
+	focus = {
+		id = POL_rymanowski
+		icon = GFX_goal_unknown
+		x = -7
+		y = 7
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_wina_mazurka
+		}
+	}
+	focus = {
+		id = POL_rokita
+		icon = GFX_goal_unknown
+		x = -5
+		y = 7
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_wina_mazurka
+		}
+	}
+	focus = {
+		id = POL_kawa_na_ławę
+		icon = GFX_goal_unknown
+		x = -3
+		y = 7
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_wina_mazurka
+		}
+	}
+	focus = {
+		id = POL_godzina_zero
+		icon = GFX_goal_unknown
+		x = -3
+		y = 8
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_kawa_na_ławę
+		}
+	}
+	focus = {
+		id = POL_dziennik_narodowy
+		icon = GFX_goal_unknown
+		x = -3
+		y = 9
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_godzina_zero
+		}
+	}
+	focus = {
+		id = POL_lewe_skrzydlo
+		icon = GFX_goal_unknown
+		x = -3
+		y = 10
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_dziennik_narodowy
+		}
+	}
+	focus = {
+		id = POL_sensejszyn
+		icon = GFX_goal_unknown
+		x = -5
+		y = 8
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_rokita
+		}
+	}
+	focus = {
+		id = POL_wiernikowska
+		icon = GFX_goal_unknown
+		x = -5
+		y = 9
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_sensejszyn
+		}
+	}
+	focus = {
+		id = POL_balcerowicz
+		icon = GFX_goal_unknown
+		x = -7
+		y = 8
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_rymanowski
+		}
+	}
+	focus = {
+		id = POL_profesor_nowak
+		icon = GFX_goal_unknown
+		x = -7
+		y = 9
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_balcerowicz
+		}
+	}
+	focus = {
+		id = POL_tede
+		icon = GFX_goal_unknown
+		x = -7
+		y = 10
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_profesor_nowak
+		}
+	}
+	focus = {
+		id = POL_telekammela
+		icon = GFX_goal_unknown
+		x = -5
+		y = 10
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_wiernikowska
+		}
+	}
+	focus = {
+		id = POL_krzan_iza
+		icon = GFX_goal_unknown
+		x = -5
+		y = 11
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_telekammela
+		}
+	}
+	focus = {
+		id = POL_miller
+		icon = GFX_goal_unknown
+		x = -7
+		y = 11
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_tede
+		}
+	}
+	focus = {
+		id = POL_zero_butow_i_kuchni
+		icon = GFX_goal_unknown
+		x = -3
+		y = 11
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_lewe_skrzydlo
+		}
+	}
+	focus = {
+		id = POL_nowy_kukiz
+		icon = GFX_goal_unknown
+		x = 3
+		y = 7
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_zero_kampanii
+		}
+	}
+	focus = {
+		id = POL_aborcja_do_14_roku_zycia
+		icon = GFX_goal_unknown
+		x = 5
+		y = 7
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_zero_kampanii
+		}
+	}
+	focus = {
+		id = POL_dzban_czarnek
+		icon = GFX_goal_unknown
+		x = 7
+		y = 7
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_zero_kampanii
+		}
+	}
+	focus = {
+		id = POL_500plus_dla_kazdej_swini
+		icon = GFX_goal_unknown
+		x = 5
+		y = 8
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_aborcja_do_14_roku_zycia
+		}
+	}
+	focus = {
+		id = POL_ciaza_siedem_miesiecy
+		icon = GFX_goal_unknown
+		x = 5
+		y = 9
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_500plus_dla_kazdej_swini
+		}
+	}
+	focus = {
+		id = POL_inkubator_w_kazdej_gminie
+		icon = GFX_goal_unknown
+		x = 5
+		y = 10
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_ciaza_siedem_miesiecy
+		}
+	}
+	focus = {
+		id = POL_siepomaga
+		icon = GFX_goal_unknown
+		x = 7
+		y = 10
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_kanaliada
+		}
+	}
+	focus = {
+		id = POL_wcielmy_rmf_i_tvn
+		icon = GFX_goal_unknown
+		x = 7
+		y = 8
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_dzban_czarnek
+		}
+	}
+	focus = {
+		id = POL_kanaliada
+		icon = GFX_goal_unknown
+		x = 7
+		y = 9
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_wcielmy_rmf_i_tvn
+		}
+	}
+	focus = {
+		id = POL_memowa_kampania
+		icon = GFX_goal_unknown
+		x = 3
+		y = 8
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_nowy_kukiz
+		}
+	}
+	focus = {
+		id = POL_rozmowy_z_kandydatami
+		icon = GFX_goal_unknown
+		x = 3
+		y = 9
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_memowa_kampania
+		}
+	}
+	focus = {
+		id = POL_maksymalny_obiektywizm
+		icon = GFX_goal_unknown
+		x = 3
+		y = 10
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_rozmowy_z_kandydatami
+		}
+	}
+	focus = {
+		id = POL_skradziona_karta
+		icon = GFX_goal_unknown
+		x = 5
+		y = 11
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_maksymalny_obiektywizm
+		}
+		prerequisite = {
+			focus = POL_inkubator_w_kazdej_gminie
+		}
+		prerequisite = {
+			focus = POL_siepomaga
+		}
+	}
+	focus = {
+		id = POL_zero_absolutne
+		icon = GFX_goal_unknown
+		x = 0
+		y = 12
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_skradziona_karta
+		}
+		prerequisite = {
+			focus = POL_zero_butow_i_kuchni
+		}
+		prerequisite = {
+			focus = POL_krzan_iza
+		}
+		prerequisite = {
+			focus = POL_miller
+		}
+	}
+	focus = {
+		id = POL_rozszerzmy_monopol_na_baltow
+		icon = GFX_goal_unknown
+		x = -5
+		y = 13
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_zero_absolutne
+		}
+	}
+	focus = {
+		id = POL_niemieckie_zero
+		icon = GFX_goal_unknown
+		x = 0
+		y = 17
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_zero_absolutne
+		}
+	}
+	focus = {
+		id = POL_zero_u_krecika
+		icon = GFX_goal_unknown
+		x = 5
+		y = 13
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_zero_absolutne
+		}
+	}
+	focus = {
+		id = POL_temperatura_ponizej_zera
+		icon = GFX_goal_unknown
+		x = -7
+		y = 14
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_rozszerzmy_monopol_na_baltow
+		}
+	}
+	focus = {
+		id = POL_cejrowski_w_meksyku
+		icon = GFX_goal_unknown
+		x = -5
+		y = 14
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_rozszerzmy_monopol_na_baltow
+		}
+	}
+	focus = {
+		id = POL_stano_w_palestynie
+		icon = GFX_goal_unknown
+		x = -3
+		y = 14
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_rozszerzmy_monopol_na_baltow
+		}
+	}
+	focus = {
+		id = POL_boso_przez_ameryke_lacinska
+		icon = GFX_goal_unknown
+		x = -5
+		y = 15
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_cejrowski_w_meksyku
+		}
+	}
+	focus = {
+		id = POL_trump_zero
+		icon = GFX_goal_unknown
+		x = -7
+		y = 15
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_temperatura_ponizej_zera
+		}
+	}
+	focus = {
+		id = POL_uzaleznienie_szejkow
+		icon = GFX_goal_unknown
+		x = -3
+		y = 15
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_stano_w_palestynie
+		}
+	}
+	focus = {
+		id = POL_kontynuuowanie_kampanii_medialnej_na_balkanach
+		icon = GFX_goal_unknown
+		x = 3
+		y = 14
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_zero_u_krecika
+		}
+	}
+	focus = {
+		id = POL_wakacje_w_bulgarii
+		icon = GFX_goal_unknown
+		x = 5
+		y = 14
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_zero_u_krecika
+		}
+	}
+	focus = {
+		id = POL_afrykanskie_zero
+		icon = GFX_goal_unknown
+		x = 7
+		y = 14
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_zero_u_krecika
+		}
+	}
+	focus = {
+		id = POL_zdlawienie_propagandy_faszystowskiej
+		icon = GFX_goal_unknown
+		x = 3
+		y = 15
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_kontynuuowanie_kampanii_medialnej_na_balkanach
+		}
+	}
+	focus = {
+		id = POL_ocean_polski
+		icon = GFX_goal_unknown
+		x = 5
+		y = 15
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_wakacje_w_bulgarii
+		}
+	}
+	focus = {
+		id = POL_stacja_przesylowa_alexandria
+		icon = GFX_goal_unknown
+		x = 7
+		y = 15
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_afrykanskie_zero
+		}
+	}
+	focus = {
+		id = POL_wolne_media_w_rosji
+		icon = GFX_goal_unknown
+		x = 2
+		y = 18
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_niemieckie_zero
+		}
+	}
+	focus = {
+		id = POL_koniec_imperializmu_brytyjskiego
+		icon = GFX_goal_unknown
+		x = 0
+		y = 18
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_niemieckie_zero
+		}
+	}
+	focus = {
+		id = POL_zero_wolnej_europy
+		icon = GFX_goal_unknown
+		x = -2
+		y = 18
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_niemieckie_zero
+		}
+	}
+	focus = {
+		id = POL_absolute_0inema
+		icon = GFX_goal_unknown
+		x = 0
+		y = 19
+		relative_position_id = POL_opcja_zero
+		cost = 5
+		prerequisite = {
+			focus = POL_koniec_imperializmu_brytyjskiego
+		}
+		prerequisite = {
+			focus = POL_zero_wolnej_europy
+		}
+		prerequisite = {
+			focus = POL_wolne_media_w_rosji
+		}
+	}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	focus = {
+		id = POL_opcja_kukiz
+		icon = GFX_goal_unknown
+		x = 95
+		y = 1
+		relative_position_id = POL_opcja_prawica
+		cost = 5
+		allow_branch = {
+			always = no
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_lepper
+					has_completed_focus = POL_opcja_pis
+					has_completed_focus = POL_opcja_konfa
+					has_completed_focus = POL_opcja_zero
+					has_completed_focus = POL_opcja_kamraci
+				}
+			}
+		}
+		available = {
+			always = no
+		}
+		prerequisite = {
+			focus = POL_opcja_prawica
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_lepper
+			focus = POL_opcja_pis
+			focus = POL_opcja_konfa
+			focus = POL_opcja_kamraci
+			focus = POL_opcja_zero
+		}
+		offset = {
+			x = -30
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_prawica
+			}
+		}
+		offset = {
+			x = -65
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_kukiz
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+	focus = {
+		id = POL_kukiz_25
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_kukiz
+		}
+	}
+	focus = {
+		id = POL_gambit_prezydencki
+		icon = GFX_goal_unknown
+		x = 0
+		y = 2
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_kukiz_25
+		}
+	}
+	focus = {
+		id = POL_republikanie
+		icon = GFX_goal_unknown
+		x = 2
+		y = 3
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_gambit_prezydencki
+		}
+	}
+	focus = {
+		id = POL_wipler_i_gowin
+		icon = GFX_goal_unknown
+		x = 0
+		y = 3
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_gambit_prezydencki
+		}
+	}
+	focus = {
+		id = POL_tanajno
+		icon = GFX_goal_unknown
+		x = -2
+		y = 3
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_gambit_prezydencki
+		}
+	}
+	focus = {
+		id = POL_nie_da_sie_mnie_kupic
+		icon = GFX_goal_unknown
+		x = 0
+		y = 4
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_tanajno
+		}
+		prerequisite = {
+			focus = POL_wipler_i_gowin
+		}
+		prerequisite = {
+			focus = POL_republikanie
+		}
+	}
+	focus = {
+		id = POL_restrukturyzacja
+		icon = GFX_goal_unknown
+		x = -2
+		y = 5
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_nie_da_sie_mnie_kupic
+		}
+	}
+	focus = {
+		id = POL_partia_karierowiczow
+		icon = GFX_goal_unknown
+		x = 2
+		y = 5
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_nie_da_sie_mnie_kupic
+		}
+	}
+	focus = {
+		id = POL_paleolibertarianizm
+		icon = GFX_goal_unknown
+		x = 0
+		y = 5
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_nie_da_sie_mnie_kupic
+		}
+	}
+	focus = {
+		id = POL_jowy
+		icon = GFX_goal_unknown
+		x = -1
+		y = 6
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_paleolibertarianizm
+			focus = POL_restrukturyzacja
+		}
+	}
+	focus = {
+		id = POL_negocjacje_w_sprawie_ue
+		icon = GFX_goal_unknown
+		x = 1
+		y = 6
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_paleolibertarianizm
+			focus = POL_partia_karierowiczow
+		}
+	}
+	focus = {
+		id = POL_wybor_przewodniczacego
+		icon = GFX_goal_unknown
+		x = 0
+		y = 7
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_jowy
+		}
+		prerequisite = {
+			focus = POL_negocjacje_w_sprawie_ue
+		}
+	}
+	focus = {
+		id = POL_kukiz
+		icon = GFX_goal_unknown
+		x = -3
+		y = 8
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_wybor_przewodniczacego
+		}
+		mutually_exclusive = {
+			focus = POL_jakubiak
+		}
+	}
+	focus = {
+		id = POL_jakubiak
+		icon = GFX_goal_unknown
+		x = 3
+		y = 8
+		relative_position_id = POL_opcja_kukiz
+		cost = 5
+		prerequisite = {
+			focus = POL_wybor_przewodniczacego
+		}
+		mutually_exclusive = {
+			focus = POL_kukiz
+		}
+	}
+	
+
+
+
+
+
+	# ------
+	# CENTRUM
+	# ------
+	focus = {
+		id = POL_opcja_centrum
+		icon = GFX_goal_unknown
+		x = 38
+		y = 1
+		relative_position_id = POL_decydujace_posiedzenie
+		cost = 0
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_prawica
+					has_completed_focus = POL_opcja_lewica
+					has_completed_focus = POL_opcja_anarchia
+					has_completed_focus = POL_opcja_dziwna
+				}
+			}
+		}
+		prerequisite = {
+			focus = POL_decydujace_posiedzenie
+		}
+		available = {
+			always = no
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_prawica
+			focus = POL_opcja_lewica
+			focus = POL_opcja_anarchia
+			focus = POL_opcja_dziwna
+		}
+		offset = {
+			x = -38
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_centrum
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+	focus = {
+		id = POL_opcja_holownia
+		icon = GFX_goal_unknown
+		x = -15
+		y = 1
+		relative_position_id = POL_opcja_centrum
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_centrum
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_petru
+			focus = POL_opcja_tusk
+			focus = POL_opcja_agrarna
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_agrarna
+					has_completed_focus = POL_opcja_petru
+					has_completed_focus = POL_opcja_tusk
+				}
+			}
+		}
+		offset = {
+			x = 15
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_holownia
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+	focus = {
+		id = POL_opcja_petru
+		icon = GFX_goal_unknown
+		x = -5
+		y = 1
+		relative_position_id = POL_opcja_centrum
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_centrum
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_holownia
+			focus = POL_opcja_tusk
+			focus = POL_opcja_agrarna
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_agrarna
+					has_completed_focus = POL_opcja_holownia
+					has_completed_focus = POL_opcja_tusk
+				}
+			}
+		}
+		offset = {
+			x = 5
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_petru
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+#TUSK#
+
+
+
+	focus = {
+		id = POL_opcja_tusk
+		icon = GFX_goal_unknown
+		x = 5
+		y = 1
+		relative_position_id = POL_opcja_centrum
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_centrum
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_holownia
+			focus = POL_opcja_petru
+			focus = POL_opcja_agrarna
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_petru
+					has_completed_focus = POL_opcja_holownia
+					has_completed_focus = POL_opcja_agrarna
+				}
+			}
+		}
+		offset = {
+			x = -5
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_tusk
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+	
+	focus = {
+		id = POL_powrot_do_europy
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_tusk
+		}
+	}
+
+	focus = {
+		id = POL_wykorzystanie_srodkow_z_kpo
+		icon = GFX_goal_unknown
+		x = -2
+		y = 2
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_powrot_do_europy
+		}
+	}
+
+	focus = {
+		id = POL_inwestycje_w_bastion
+		icon = GFX_goal_unknown
+		x = 0
+		y = 2
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_powrot_do_europy
+		}
+	}
+
+	focus = {
+		id = POL_bron_na_dinozaury
+		icon = GFX_goal_unknown
+		x = 2
+		y = 2
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_powrot_do_europy
+		}
+	}
+
+	focus = {
+		id = POL_wosp
+		icon = GFX_goal_unknown
+		x = -2
+		y = 3
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_wykorzystanie_srodkow_z_kpo
+		}
+	}
+
+	focus = {
+		id = POL_pamietamy_KLD
+		icon = GFX_goal_unknown
+		x = 2
+		y = 3
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_bron_na_dinozaury
+		}
+	}
+
+	focus = {
+		id = POL_ja_tymi_rekoma
+		icon = GFX_goal_unknown
+		x = 0
+		y = 3
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_inwestycje_w_bastion
+		}
+	}
+
+	focus = {
+		id = POL_silni_razem #event (silni razem wybiora kaisera) tu zmienia sie ideologia z demokratycznej na nonalignd, a jesli zosytanie wybrany tusk to i jego portret sie zmienia#
+		icon = GFX_goal_unknown
+		x = 0
+		y = 4
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_ja_tymi_rekoma
+		}
+		prerequisite = {
+			focus = POL_pamietamy_KLD
+		}
+		prerequisite = {
+			focus = POL_wosp
+		}
+	}
+
+	focus = {
+		id = POL_ruch_osmiu_gwiazd
+		icon = GFX_goal_unknown
+		x = 3
+		y = 5
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_silni_razem
+		}
+	}
+
+	focus = {
+		id = POL_komisje_sledcze
+		icon = GFX_goal_unknown
+		x = 3
+		y = 6
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_ruch_osmiu_gwiazd
+		}
+	}
+
+	focus = {
+		id = POL_kolejna_koalicja_psl
+		icon = GFX_goal_unknown
+		x = 3
+		y = 7
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_komisje_sledcze
+		}
+	}
+
+	focus = {
+		id = POL_pozarcie_przystawek
+		icon = GFX_goal_unknown
+		x = 3
+		y = 8
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_kolejna_koalicja_psl
+		}
+	}
+
+	focus = {
+		id = POL_wymienienie_neosedziow
+		icon = GFX_goal_unknown
+		x = 1
+		y = 5
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_silni_razem
+		}
+	}
+
+	focus = {
+		id = POL_przyjecie_paktu_imigracyjnego
+		icon = GFX_goal_unknown
+		x = -1
+		y = 5
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_silni_razem
+		}
+	}
+
+	focus = {
+		id = POL_euro_nie_zlotowka
+		icon = GFX_goal_unknown
+		x = -3
+		y = 5
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_silni_razem
+		}
+	}
+
+	focus = {
+		id = POL_utrzymanie_socjali_pisowskich
+		icon = GFX_goal_unknown
+		x = -3
+		y = 6
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_euro_nie_zlotowka
+		}
+	}
+
+	focus = {
+		id = POL_kredyt_0
+		icon = GFX_goal_unknown
+		x = -3
+		y = 7
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_utrzymanie_socjali_pisowskich
+		}
+	}
+
+	focus = {
+		id = POL_rozwoj_inzynierii_i_lecznictwa
+		icon = GFX_goal_unknown
+		x = -1
+		y = 6
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_przyjecie_paktu_imigracyjnego
+		}
+	}
+
+	focus = {
+		id = POL_podwyzszenie_wieku_emerytalnego
+		icon = GFX_goal_unknown
+		x = 1
+		y = 6
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_przyjecie_paktu_imigracyjnego
+		}
+	}
+
+	focus = {
+		id = POL_polskosc_to_nienormalnosc
+		icon = GFX_goal_unknown
+		x = -1
+		y = 7
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_rozwoj_inzynierii_i_lecznictwa
+		}
+		prerequisite = {
+			focus = POL_podwyzszenie_wieku_emerytalnego
+		}
+	}
+
+	focus = {
+		id = POL_fur_deutschland
+		icon = GFX_goal_unknown
+		x = 1
+		y = 8
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_polskosc_to_nienormalnosc
+		}
+		prerequisite = {
+			focus = POL_kolejna_koalicja_psl
+		}
+	}
+
+	focus = {
+		id = POL_polityka_cieplej_wody
+		icon = GFX_goal_unknown
+		x = -1
+		y = 8
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_polskosc_to_nienormalnosc
+		}
+		prerequisite = {
+			focus = POL_kredyt_0
+		}
+	}
+
+	focus = {
+		id = POL_wina_tuska
+		icon = GFX_goal_unknown
+		x = 1
+		y = 9
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		prerequisite = {
+			focus = POL_polityka_cieplej_wody
+		}
+		prerequisite = {
+			focus = POL_fur_deutschland
+		}
+		prerequisite = {
+			focus = POL_pozarcie_przystawek
+		}
+	}
+
+
+
+
+
+
+
+#DRZEWKO PODBOJU KAISERA#
+
+
+
+
+focus = {
+		id = POL_osadzenie_demokratow_na_tronie_niem
+		icon = GFX_goal_unknown
+		x = 1
+		y = 12
+		relative_position_id = POL_opcja_tusk
+		cost = 5
+		allow_branch = {
+			OR = {
+				has_completed_focus = POL_opcja_tusk
+			}
+		}
+		offset = {
+			x = 12
+			y = -10
+			trigger = {
+					has_completed_focus = POL_opcja_tusk
+			}
+		}
+	}
+
+focus = {
+		id = POL_zaproszenie_francuzow
+		icon = GFX_goal_unknown
+		x = 3
+		y = 1
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_osadzenie_demokratow_na_tronie_niem
+		}
+	}
+
+focus = {
+		id = POL_pakt_stalowy
+		icon = GFX_goal_unknown
+		x = -3
+		y = 1
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_osadzenie_demokratow_na_tronie_niem
+		}
+	}
+
+focus = {
+		id = POL_unia_polsko_niemiecka
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_osadzenie_demokratow_na_tronie_niem
+		}
+	}
+
+
+
+
+
+
+
+
+focus = {
+		id = POL_nord_stream_2
+		icon = GFX_goal_unknown
+		x = -5
+		y = 2
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_unia_polsko_niemiecka
+		}
+		prerequisite = {
+			focus = POL_pakt_stalowy
+		}
+		
+	}
+
+focus = {
+		id = POL_wolna_bialorus
+		icon = GFX_goal_unknown
+		x = -4
+		y = 3
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_nord_stream_2
+		}
+		
+	}
+
+focus = {
+		id = POL_obrona_ukrainy
+		icon = GFX_goal_unknown
+		x = -6
+		y = 3
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_nord_stream_2
+		}
+		
+	}
+
+focus = {
+		id = POL_powalenie_niedzwiedzia
+		icon = GFX_goal_unknown
+		x = -5
+		y = 4
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_obrona_ukrainy
+		}
+		prerequisite = {
+			focus = POL_wolna_bialorus
+		}
+		
+	}
+
+focus = {
+		id = POL_bliskowschodnia_demokracja
+		icon = GFX_goal_unknown
+		x = -6
+		y = 5
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_powalenie_niedzwiedzia
+		}
+		
+	}
+
+focus = {
+		id = POL_zdlawienie_skrajnosci
+		icon = GFX_goal_unknown
+		x = -4
+		y = 5
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_powalenie_niedzwiedzia
+		}
+		
+	}
+
+
+
+
+
+
+
+
+focus = {
+		id = POL_droga_ku_zjednoczonej_europie
+		icon = GFX_goal_unknown
+		x = 0
+		y = 2
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_unia_polsko_niemiecka
+		}
+		
+	}
+
+focus = {
+		id = POL_Skandinavische_eurokomissariat
+		icon = GFX_goal_unknown
+		x = -2
+		y = 3
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_droga_ku_zjednoczonej_europie
+		}
+		
+	}
+
+focus = {
+		id = POL_Benelux_eurokomissariat
+		icon = GFX_goal_unknown
+		x = 0
+		y = 3
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_droga_ku_zjednoczonej_europie
+		}
+		
+	}
+
+focus = {
+		id = POL_Baltische_eurokomissariat
+		icon = GFX_goal_unknown
+		x = 2
+		y = 3
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_droga_ku_zjednoczonej_europie
+		}
+		
+	}
+
+focus = {
+		id = POL_eurokomissariat_Tschechien
+		icon = GFX_goal_unknown
+		x = 2
+		y = 4
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_Baltische_eurokomissariat
+		}
+		
+	}
+
+focus = {
+		id = POL_kwestia_orbana
+		icon = GFX_goal_unknown
+		x = 0
+		y = 4
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_Benelux_eurokomissariat
+		}
+		
+	}
+
+focus = {
+		id = POL_zmiazdzenie_alpejskiej_neutralnosci
+		icon = GFX_goal_unknown
+		x = -2
+		y = 4
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_droga_ku_zjednoczonej_europie
+		}
+		
+	}
+
+focus = {
+		id = POL_Balkanische_eurokomissariat
+		icon = GFX_goal_unknown
+		x = 1
+		y = 5
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_kwestia_orbana
+		}
+		prerequisite = {
+			focus = POL_eurokomissariat_Tschechien
+		}
+		
+	}
+
+focus = {
+		id = POL_Anschluss
+		icon = GFX_goal_unknown
+		x = -1
+		y = 5
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_kwestia_orbana
+		}
+		prerequisite = {
+			focus = POL_zmiazdzenie_alpejskiej_neutralnosci
+		}
+		
+	}
+
+focus = {
+		id = POL_do_europy_federalnej
+		icon = GFX_goal_unknown
+		x = 0
+		y = 6
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_Anschluss
+		}
+		prerequisite = {
+			focus = POL_Balkanische_eurokomissariat
+		}
+		
+	}
+
+
+
+
+
+
+
+focus = {
+		id = POL_armia_europejska
+		icon = GFX_goal_unknown
+		x = 5
+		y = 2
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_unia_polsko_niemiecka
+		}
+		prerequisite = {
+			focus = POL_zaproszenie_francuzow
+		}
+		
+	}
+
+focus = {
+		id = POL_Friedensmarine
+		icon = GFX_goal_unknown
+		x = 4
+		y = 3
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_armia_europejska
+		}
+		
+	}
+
+focus = {
+		id = POL_Tuskwaffe
+		icon = GFX_goal_unknown
+		x = 6
+		y = 3
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_armia_europejska
+		}
+		
+	}
+
+focus = {
+		id = POL_koniec_Brexitu
+		icon = GFX_goal_unknown
+		x = 5
+		y = 4
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_Friedensmarine
+			focus = POL_Tuskwaffe
+		}
+		
+	}
+
+focus = {
+		id = POL_zarzad_koloni_brytyjskich
+		icon = GFX_goal_unknown
+		x = 4
+		y = 5
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_koniec_Brexitu
+		}
+		
+	}
+
+focus = {
+		id = POL_unia_afrykanska
+		icon = GFX_goal_unknown
+		x = 6
+		y = 5
+		relative_position_id = POL_osadzenie_demokratow_na_tronie_niem
+		cost = 5
+		prerequisite = {
+			focus = POL_koniec_Brexitu
+		}
+		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#KOALICJA POLSKA#
+
+	focus = {
+		id = POL_opcja_agrarna
+		icon = GFX_goal_unknown
+		x = 15
+		y = 1
+		relative_position_id = POL_opcja_centrum
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_centrum
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_holownia
+			focus = POL_opcja_petru
+			focus = POL_opcja_tusk
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_holownia
+					has_completed_focus = POL_opcja_petru
+					has_completed_focus = POL_opcja_tusk
+				}
+			}
+		}
+		offset = {
+			x = -15
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_agrarna
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+	# ------
+	# LEWICA
+	# ------
+	focus = {
+		id = POL_opcja_lewica
+		icon = GFX_focus_POL_opcja_lewica
+		x = 65
+		y = 1
+		relative_position_id = POL_decydujace_posiedzenie
+		cost = 0
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_prawica
+					has_completed_focus = POL_opcja_centrum
+					has_completed_focus = POL_opcja_anarchia
+					has_completed_focus = POL_opcja_dziwna
+				}
+			}
+		}
+		prerequisite = {
+			focus = POL_decydujace_posiedzenie
+		}
+		available = {
+			always = no
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_prawica
+			focus = POL_opcja_centrum
+			focus = POL_opcja_anarchia
+			focus = POL_opcja_dziwna
+		}
+		offset = {
+			x = -65
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_lewica
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+	# NOWA LEWICA #
+
+	focus = {
+		id = POL_opcja_nowa_lewica
+		icon = GFX_goal_unknown
+		x = -6
+		y = 1
+		relative_position_id = POL_opcja_lewica
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_lewica
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_moja_ojczyzna_zjednoczona
+			focus = POL_opcja_razem
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_moja_ojczyzna_zjednoczona
+					has_completed_focus = POL_opcja_razem
+				}
+			}
+		}
+		offset = {
+			x = 6
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_nowa_lewica
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+focus = {
+		id = POL_opcja_moja_ojczyzna_zjednoczona
+		icon = GFX_goal_unknown
+		x = 6
+		y = 1
+		relative_position_id = POL_opcja_lewica
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_lewica
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_razem
+			focus = POL_opcja_nowa_lewica
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_razem
+					has_completed_focus = POL_opcja_nowa_lewica
+				}
+			}
+		}
+		offset = {
+			x = -6
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_moja_ojczyzna_zjednoczona
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+focus = {
+		id = POL_opcja_razem
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		relative_position_id = POL_opcja_lewica
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_lewica
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_nowa_lewica
+			focus = POL_opcja_moja_ojczyzna_zjednoczona
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_nowa_lewica
+					has_completed_focus = POL_opcja_moja_ojczyzna_zjednoczona
+				}
+			}
+		}
+		offset = {
+			x = 0
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_razem
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+	# ------
+	# ANARCHIA
+	# ------
+	focus = {
+		id = POL_opcja_anarchia
+		icon = GFX_focus_POL_opcja_anarchia
+		x = 80
+		y = 1
+		relative_position_id = POL_decydujace_posiedzenie
+		cost = 0
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_prawica
+					has_completed_focus = POL_opcja_centrum
+					has_completed_focus = POL_opcja_lewica
+					has_completed_focus = POL_opcja_dziwna
+				}
+			}
+		}
+		prerequisite = {
+			focus = POL_decydujace_posiedzenie
+		}
+		available = {
+			always = no
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_prawica
+			focus = POL_opcja_centrum
+			focus = POL_opcja_lewica
+			focus = POL_opcja_dziwna
+		}
+		offset = {
+			x = -80
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_anarchia
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+focus = {
+		id = POL_opcja_akap
+		icon = GFX_goal_unknown
+		x = 3
+		y = 1
+		relative_position_id = POL_opcja_anarchia
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_anarchia
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_akom
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_akom
+				}
+			}
+		}
+		offset = {
+			x = -3
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_akap
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+focus = {
+		id = POL_opcja_akom
+		icon = GFX_goal_unknown
+		x = -3
+		y = 1
+		relative_position_id = POL_opcja_anarchia
+		cost = 5
+		prerequisite = {
+			focus = POL_opcja_anarchia
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_akap
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_akap
+				}
+			}
+		}
+		offset = {
+			x = 3
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_akom
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	# ------ 
+	# PUTINIZM
+	# ------
+	focus = {
+		id = POL_opcja_dziwna
+		icon = GFX_focus_POL_opcja_dziwna
+		x = 89
+		y = 1
+		relative_position_id = POL_decydujace_posiedzenie
+		cost = 0
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = POL_opcja_prawica
+					has_completed_focus = POL_opcja_centrum
+					has_completed_focus = POL_opcja_lewica
+					has_completed_focus = POL_opcja_anarchia
+				}
+			}
+		}
+		prerequisite = {
+			focus = POL_decydujace_posiedzenie
+		}
+		available = {
+			always = no
+		}
+		mutually_exclusive = {
+			focus = POL_opcja_prawica
+			focus = POL_opcja_centrum
+			focus = POL_opcja_lewica
+			focus = POL_opcja_anarchia
+		}
+		offset = {
+			x = -89
+			y = 0
+			trigger = {
+				has_completed_focus = POL_opcja_dziwna
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+	# DRZEWKO WOJSKOWE
+
+	focus = {
+		id = POL_reorganizacja_armii
+		icon = GFX_focus_POL_reorganizacja_armii
+		cost = 10
+		x = 22
+		y = 5
+		available = {
+			has_completed_focus = POL_zamach_stanu
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POL_unloyal_army
+				add_idea = POL_wojsko_polskie
+			}
+			show_unit_leaders_tooltip = POL_rajmund_andrzejczak
+		}
+	}
+	focus = {
+		id = POL_nacisk_na_piechote
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = POL_reorganizacja_armii 
+		allow_branch = {
+			NOT = {
+				has_completed_focus = POL_motoryzacja_wojska
+			}
+		}
+		prerequisite = {
+			focus = POL_reorganizacja_armii
+		}
+		mutually_exclusive = {
+			focus = POL_motoryzacja_wojska
+		}
+		offset = {
+			x = 1
+			y = 0
+			trigger = {
+				has_completed_focus = POL_nacisk_na_piechote
+			}
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = POL_battleplan_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_grand_battle_plan
+			}
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+	focus = {
+		id = POL_obrona_ojczyzny
+		icon = GFX_goal_generic_defence
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = POL_nacisk_na_piechote
+		prerequisite = {
+			focus = POL_nacisk_na_piechote
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POL_wojsko_polskie
+				add_idea = POL_wojsko_polskie_piechota_1
+			}
+		}
+	}
+	focus = {
+		id = POL_wytrzymala_armia
+		icon = GFX_focus_generic_little_entente
+		cost = 5
+		x = -2
+		y = 2
+		relative_position_id = POL_nacisk_na_piechote
+		prerequisite = {
+			focus = POL_obrona_ojczyzny
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POL_wojsko_polskie_piechota_1
+				add_idea = POL_wojsko_polskie_piechota_2
+			}
+		}
+	}
+	focus = {
+		id = POL_produkcja_taniej_artylerii
+		icon = GFX_focus_SWE_let_fly_all_guns
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = POL_nacisk_na_piechote
+		prerequisite = {
+			focus = POL_nacisk_na_piechote
+		}
+		completion_reward = {
+			add_ideas = POL_tania_artyleria_spirit
+		}
+	}
+	focus = {
+		id = POL_badania_wojskowe
+		icon = GFX_goal_generic_scientific_exchange
+		cost = 5
+		x = 0
+		y = 2
+		relative_position_id = POL_nacisk_na_piechote
+		prerequisite = {
+			focus = POL_produkcja_taniej_artylerii
+		}
+		completion_reward = {
+			# boost do research speed
+		}
+	}
+	focus = {
+		id = POL_szybkie_okopy
+		icon = GFX_goal_generic_construction2
+		cost = 5
+		x = 0
+		y = 3
+		relative_position_id = POL_nacisk_na_piechote
+		prerequisite = {
+			focus = POL_badania_wojskowe
+		}
+		completion_reward = {
+			add_ideas = POL_okopana_armia_spirit
+		}
+	}
+	focus = {
+		id = POL_masowa_produkcja_schronow
+		icon = GFX_goal_fortify_the_westwall
+		cost = 10
+		x = -1
+		y = 4
+		relative_position_id = POL_nacisk_na_piechote
+		prerequisite = {
+			focus = POL_wytrzymala_armia
+		}
+		prerequisite = {
+			focus = POL_szybkie_okopy
+		}
+		offset = {
+			x = 1
+			y = 0
+			trigger = {
+				has_completed_focus = POL_nacisk_na_piechote
+			}
+		}
+		completion_reward = {
+			add_ideas = POL_masowa_produkcja_schronow_spirit
+		}
+	}
+	focus = {
+		id = POL_motoryzacja_wojska
+		icon = GFX_goal_generic_army_motorized
+		cost = 10
+		x = 1
+		y = 1
+		relative_position_id = POL_reorganizacja_armii 
+		allow_branch = {
+			NOT = {
+				has_completed_focus = POL_nacisk_na_piechote
+			}
+		}
+		prerequisite = {
+			focus = POL_reorganizacja_armii
+		}
+		mutually_exclusive = {
+			focus = POL_nacisk_na_piechote
+		}
+		offset = {
+			x = -1
+			y = 0
+			trigger = {
+				has_completed_focus = POL_motoryzacja_wojska
+			}
+		}
+		completion_reward = {
+			
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+			add_doctrine_cost_reduction = {
+				name = POL_mobile_warfare_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_mobile_warfare
+			}
+		}
+	}
+	focus = {
+		id = POL_produkcja_tanich_pojazdow
+		icon = GFX_focus_generic_improve_roads
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = POL_motoryzacja_wojska
+		prerequisite = {
+			focus = POL_motoryzacja_wojska
+		}
+		completion_reward = {
+			add_ideas = POL_tania_motoryzacja_spirit
+		}
+	}
+	focus = {
+		id = POL_stymulacja_przemyslu_motoryzacyjnego
+		icon = GFX_focus_GER_kdf_wagen
+		cost = 10
+		x = 0
+		y = 2
+		relative_position_id = POL_motoryzacja_wojska
+		prerequisite = {
+			focus = POL_produkcja_tanich_pojazdow
+		}
+		completion_reward = {
+			add_ideas = POL_pobudzona_motoryzacja_spirit
+		}
+	}
+	focus = {
+		id = POL_wsparcie_z_powietrza
+		icon = GFX_focus_generic_tank_air_support
+		cost = 5
+		x = 0
+		y = 3
+		relative_position_id = POL_motoryzacja_wojska
+		prerequisite = {
+			focus = POL_stymulacja_przemyslu_motoryzacyjnego
+		}
+		completion_reward = {
+			add_ideas = POL_wsparcie_z_powietrza_spirit
+		}
+	}
+	focus = {
+		id = POL_natarcie_na_wroga
+		icon = GFX_goal_generic_small_arms
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = POL_motoryzacja_wojska
+		prerequisite = {
+			focus = POL_motoryzacja_wojska
+		}
+		offset = {
+			x = -4
+			y = 0
+			trigger = {
+				has_completed_focus = POL_motoryzacja_wojska
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POL_wojsko_polskie
+				add_idea = POL_wojsko_polskie_motoryzacja_1
+			}
+		}
+	}
+	focus = {
+		id = POL_predkosc_sie_liczy
+		icon = GFX_goal_generic_army_tanks
+		cost = 5
+		x = 2
+		y = 2
+		relative_position_id = POL_motoryzacja_wojska
+		prerequisite = {
+			focus = POL_natarcie_na_wroga
+		}
+		offset = {
+			x = -4
+			y = 0
+			trigger = {
+				has_completed_focus = POL_motoryzacja_wojska
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POL_wojsko_polskie_motoryzacja_1
+				add_idea = POL_wojsko_polskie_motoryzacja_2
+			}
+		}
+	}
+	focus = {
+		id = POL_masowa_produkcja_logistyki
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10
+		x = 1
+		y = 4
+		relative_position_id = POL_motoryzacja_wojska
+		prerequisite = {
+			focus = POL_wsparcie_z_powietrza
+		}
+		prerequisite = {
+			focus = POL_predkosc_sie_liczy
+		}
+		offset = {
+			x = -1
+			y = 0
+			trigger = {
+				has_completed_focus = POL_motoryzacja_wojska
+			}
+		}
+		completion_reward = {
+			add_ideas = POL_masowa_produkcja_logistyki_spirit
+		}
+	}
+
+	# POLSKA GUROOOM
+	focus = {
+		id = POL_za_wielka_polske
+		icon = GFX_focus_POL_za_wielka_polske
+		cost = 2.9
+		x = 0
+		y = 6
+		relative_position_id = POL_reorganizacja_armii
+		available = {
+			has_war_with_major = yes
+			has_completed_focus = POL_decydujace_posiedzenie
+		}
+		prerequisite = {
+			focus = POL_masowa_produkcja_schronow
+			focus = POL_masowa_produkcja_logistyki
+		}
+		completion_reward = {
+			add_ideas = POL_za_wielka_polske_spirit
+		}
+	}
+
+}
+
+#			custom_effect_tooltip = generic_skip_one_line_tt 
