@@ -72,6 +72,7 @@ leader_traits = {
 	}
 
 	mod_agresywny_stalinista = {
+		sprite = 12
 		random = no
 		experience_gain_army = @chief_experience_gain_medium
 		army_armor_attack_factor = 0.15
@@ -83,6 +84,7 @@ leader_traits = {
 	}
 
 	mod_husarz = {
+		sprite = 17
 		random = no
 		experience_gain_army = @chief_experience_gain_medium
 		cavalry_attack_factor = 0.2
@@ -93,6 +95,7 @@ leader_traits = {
 	}
 
 	mod_pruski_general = {
+		sprite = 18
 		random = no
 		experience_gain_army = @chief_experience_gain_high
 		army_attack_speed_factor = 0.1
@@ -103,6 +106,7 @@ leader_traits = {
 	}
 
 	mod_jaszczur = {
+		sprite = 7
 		random = no
 		justify_war_goal_time = -0.5
 		army_attack_factor = 0.15
@@ -118,6 +122,7 @@ leader_traits = {
 	}
 
 	mod_pruska_dominacja = {
+		sprite = 2
 		random = no
 		experience_gain_air = @chief_experience_gain_medium
 		air_cas_efficiency = 0.2
@@ -128,6 +133,7 @@ leader_traits = {
 	}
 
 	mod_specjalista_od_materialow_wyb = {
+		sprite = 16
 		random = no
 		fuel_gain_factor = 0.05
 		unit_artillery_brigade_design_cost_factor = -1.00
@@ -138,6 +144,7 @@ leader_traits = {
 	}
 
 	mod_historyk_antyniemiecki = {
+		sprite = 9
 		random = no
 		mobilization_speed = 0.5
 		army_attack_against_major_factor = 0.25
@@ -149,6 +156,7 @@ leader_traits = {
 	}
 
 	mod_dafaelowiec = {
+		sprite = 6
 		random = no
 		naval_doctrine_cost_factor = 0.05
 		war_support_factor = -0.1
@@ -178,6 +186,7 @@ leader_traits = {
 	}
 	
 	mod_naftowy_szejk = {
+		sprite = 6
 		random = no
 		fuel_gain_factor = 0.4
 		production_speed_synthetic_refinery_factor = 0.3
@@ -185,24 +194,28 @@ leader_traits = {
 	}
 
 	mod_dzban_edukacji = {
+		sprite = 14
 		random = no
 		political_power_gain = 0.5
 		stability_factor = -0.1
 	}
 
 	mod_prokurator = {
+		sprite = 13
 		random = no
 		stability_factor = 0.2
 		drift_defence_factor = 0.3
 	}
 
 	mod_batyr = {
+		sprite = 7
 		random = no
 		war_support_factor = 0.25
 		monthly_population = -0.05
 	}
 
 	mod_dudus = {
+		sprite = 13
 		random = no
 		political_power_factor = 0.3
 		stability_factor = 0.2
@@ -210,17 +223,20 @@ leader_traits = {
 	}
 
 	mod_mlody_znajomy_krolika = {
+		sprite = 13
 		random = no
 		surrender_limit = 0.3
 	}
 
 	mod_ulubieniec_etatystow = {
+		sprite = 14
 		random = no
 		consumer_goods_factor = 0.15
 		production_speed_buildings_factor = 0.3
 	}
 
 	mod_libek = {
+		sprite = 10
 		random = no
 		stability_factor = -0.1
 		consumer_goods_factor = -0.2
@@ -248,6 +264,7 @@ leader_traits = {
 	}
 
 	mod_lewak_starej_daty = {
+		sprite = 18
 		random = no
 		weekly_manpower = 100
 		weekly_bombing_war_support = 0.01
@@ -257,6 +274,7 @@ leader_traits = {
 	}
 
 	mod_minister_obrony = {
+		sprite = 9
 		random = no
 		weekly_manpower = 200
 	    war_support_factor = 0.05
@@ -268,6 +286,7 @@ leader_traits = {
 	}
 
 	mod_flegmatyczny_pisowiec = {
+		sprite = 13
 		random = no
 	    war_support_factor = 0.05
 		army_core_attack_factor = 0.1
@@ -276,6 +295,7 @@ leader_traits = {
 	}
 
 	mod_rewolucjonista = {
+		sprite = 18
 		random = no
 		cat_mass_assault_cost_factor = -0.15
 		communism_drift = 0.01
@@ -284,6 +304,7 @@ leader_traits = {
 	}
 
 	mod_nacjonalista_chłopski = {
+		sprite = 7
 		random = no
 		weekly_manpower = 500
 		war_support_factor = 0.1
@@ -296,6 +317,7 @@ leader_traits = {
 	}
 
 	mod_artysta = {
+		sprite = 9
 		random = no
 		political_power_factor = 0.1
 		stability_factor = 0.5
