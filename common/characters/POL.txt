@@ -408,7 +408,7 @@ characters = {
 		advisor = {
 			slot = 150
 			slot = political_advisor
-			traits = { mod_minister_obrony }
+			traits = { mod_flegmatyczny_pisowiec }
 			idea_token = POL_mariusz_blaszczak
 			allowed = {
 				original_tag = POL
@@ -875,6 +875,496 @@ characters = {
 	}
 
 	# PLREW GENERALS - END
+
+
+
+
+### PLREW THEORISTS ###
+
+	#twoja stara up there
+
+	POL_jacek_bartosiak = {
+		name=POL_jacek_bartosiak
+		portraits = {
+			army = {
+				small="GFX_idea_POL_tomislaw_lupaszko"
+			}
+		}
+		advisor = {
+			cost = 150
+			slot = theorist
+			idea_token = POL_jacek_bartosiak
+			ledger = army
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				grand_battle_plan_expert
+			}
+		}
+	}
+
+	POL_piotr_napierala = {
+		name=POL_piotr_napierala
+		portraits = {
+			army = {
+				small="GFX_idea_POL_wladyslaw_kalkus"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = POL_piotr_napierala
+			ledger = army
+			allowed = {
+				original_tag = POL
+			}
+			traits = { military_theorist }
+		}
+	}
+
+POL_wladyslaw_kosiniak = {
+		name=POL_wladyslaw_kosiniak
+		portraits = {
+			army = {
+				small="GFX_idea_POL_wladyslaw_kalkus"
+			}
+		}
+		advisor = {
+			cost = 200
+			slot = theorist
+			idea_token = POL_wladyslaw_kosiniak
+			ledger = army
+			allowed = {
+				original_tag = POL
+			}
+			traits = { mod_minister_obrony }
+		}
+	}
+
+POL_lukail_kalsznikov = {
+		name=POL_lukail_kalasznikov
+		portraits = {
+			army = {
+				small="GFX_idea_POL_wladyslaw_kalkus"
+			}
+		}
+		advisor = {
+			cost = 150
+			slot = theorist
+			idea_token = POL_lukail_kalsznikov
+			ledger = army
+			allowed = {
+				original_tag = POL
+			}
+			traits = { mod_rewolucjonista }
+		}
+	}
+
+POL_elon_musk = {
+		name=POL_elon_musk
+		portraits = {
+			army = {
+				small="GFX_idea_POL_wladyslaw_kalkus"
+			}
+		}
+		advisor = {
+			cost = 150
+			slot = theorist
+			idea_token = POL_elon_musk
+			ledger = army
+			allowed = {
+				original_tag = POL
+			}
+			traits = { nuclear_enthusiast }
+		}
+	}
+
+POL_aleksander_jablonowski = {
+		name=POL_aleksander_jablonowski
+		portraits = {
+			army = {
+				small="GFX_idea_POL_wladyslaw_kalkus"
+			}
+		}
+		advisor = {
+			cost = 150
+			slot = theorist
+			idea_token = POL_aleksander_jablonowski
+			ledger = army
+			allowed = {
+				original_tag = POL
+			}
+			traits = { mod_jaszczur }
+		}
+	}
+
+POL_slawosz_uznanski = {
+		name=POL_slawosz_uznanski
+		portraits = {
+			army = {
+				small="GFX_idea_POL_wladyslaw_kalkus"
+			}
+		}
+		advisor = {
+			cost = 150
+			slot = theorist
+			idea_token = POL_slawosz_uznanski
+			ledger = air
+			allowed = {
+				original_tag = POL
+			}
+			traits = { air_warfare_theorist }
+		}
+	}
+
+
+### ARMY CHIEFS MOD ###
+
+
+	
+
+	
+
+	POL_czerwony_jamal = {
+		name=POL_czerwony_jamal
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = POL_czerwony_jamal
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				mod_agresywny_stalinista
+			}
+			cost = 200
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	POL_andrzej_szejna = {
+		name=POL_andrzej_szejna
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = POL_andrzej_szejna
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				red_army_organizer
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	POL_donald_von_tusk = {
+		name=POL_donald_von_tusk
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = POL_donald_von_tusk
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				mod_pruski_general
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	POL_marek_jakubiak = {
+		name=POL_marek_jakubiak
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = POL_marek_jakubiak
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				mod_husarz
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+
+
+	### AIR CHIEFS PLREW ###
+
+	POL_gluten_jager = {
+		name=POL_gluten_jager
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = POL_gluten_jager
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				mod_pruska_dominacja
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	POL_iga_swiatek = {
+		name=POL_iga_swiatek
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = POL_iga_swiatek
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				close_air_support_proponent
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+
+	### NAVAL CHIEF ###
+
+	POL_mariusz_pudzianowski = {
+		name=POL_mariusz_pudzianowski
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = POL_mariusz_pudzianowski
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				navy_capital_ship_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	POL_dafael = {
+		name=POL_dafael
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = POL_dafael
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				mod_dafaelowiec
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+
+	####PLREW DOWODZTWO###
+
+POL_wojtek_drewniak = {
+		name=POL_wojtek_drewniak
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = POL_wojtek_drewniak
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				army_infantry_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	POL_agnieszka_holland = {
+		name=POL_agnieszka_holland
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = POL_agnieszka_holland
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				army_armored_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	POL_rajmund_andrzejczak_com = {
+		name=POL_rajmund_andrzejczak_com
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = POL_rajmund_andrzejczak_com
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				army_chief_organizational_3
+			}
+			cost = 200
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	
+	POL_pies_odi = {
+		name=POL_pies_odi
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = POL_pies_odi
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				mod_specjalista_od_materialow_wyb
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	POL_norbert_baczyk = {
+		name=POL_norbert_baczyk
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = POL_norbert_baczyk
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				mod_historyk_antyniemiecki
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+
+	POL_wojciech_cejrowski_com = {
+		name=POL_wojciech_cejrowski_com
+		portraits = {
+			army = {
+				small="GFX_idea_POL_jozef_zajac"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = POL_wojciech_cejrowski_com
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				air_air_superiority_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+
+
+
+	#GENERALS#
+
 
 	POL_boleslaw_wieniawa_glugoszowski = {
 		name=POL_boleslaw_wieniawa_glugoszowski
